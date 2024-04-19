@@ -1,0 +1,503 @@
+@use "sass:math";
+@import "mixins/border-radius";
+// % 계산
+@function per($size, $contex: $mdwidth) {
+    //Default font size on html element is 100%, equivalent to 16px;
+    @return #{math.div($size, $contex) * 100%};
+}
+// pixel to em
+// $pixels 해당 요소 px
+// $context 브라우저 기본 사이즈 : 16px
+@function em($pixels, $context: $browser-context) {
+    @return #{math.div($pixels, $context)}em;
+}
+@function rem($pixels) {
+    @return #{math.div($pixels, $browser-context)}rem;
+}
+@mixin ti() {
+    font-family: "themify", "malgun gothic", "맑은고딕", "AppleGothic", Helvetica, Arial, sans-serif;
+}
+@mixin fa() {
+    font-family: "FontAwesome", "dotum", Helvetica, Arial, sans-serif;
+}
+@mixin la() {
+    font-family: "Line Awesome Free";
+    font-weight: 900;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+}
+@mixin clearfix() {
+    display: block;
+    &:before,
+    &:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+}
+@mixin shadow() {
+    border-radius: 3px;
+    box-shadow: 3px 4px 7px rgba(0, 0, 0, 0.05);
+}
+@mixin ellipsis() {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: inline-block;
+}
+@mixin background-image-retina($file, $type, $width: auto, $height: auto) {
+    background-image: url($file + "." + $type);
+    background-repeat: no-repeat;
+    background-size: $width $height;
+    @media (-webkit-min-device-pixel-ratio: 2) {
+        & {
+            background-image: url($file + "@2x." + $type);
+        }
+    }
+}
+// 비율 이미지 박스
+@mixin aspect-ratio($w, $h) {
+    position: relative;
+    overflow: hidden;
+    &::before {
+        content: "";
+        display: block;
+        height: 0;
+        padding-top: per($h, $w);
+    }
+    img {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        vertical-align: top;
+    }
+}
+@mixin aspectRatio($w, $h) {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    &::before {
+        content: "";
+        display: block;
+        height: 0;
+        padding-top: per($h, $w);
+    }
+}
+@mixin aspectRatioImg($w, $h) {
+    position: relative;
+    overflow: hidden;
+    &::before {
+        display: block;
+        height: 0;
+        padding-top: per($h, $w);
+        content: "";
+    }
+    img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 100%;
+        vertical-align: top;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    &:hover img,
+    &:focus img,
+    &:active img {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+@mixin mw {
+    max-width: 1276px;
+    margin: 0 auto;
+}
+@mixin headingfont() {
+    font-family: $heading-font;
+    font-weight: 300;
+}
+@mixin hover-opercity($op: 0.7, $t: 0.3s) {
+    img {
+        transition: all $t ease-out;
+        transform: translateY(-50%);
+    }
+    &:hover,
+    &:active,
+    &:focus {
+        .photo-img {
+            border-color: $skyblue;
+            transition: all 1s ease-out;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        img {
+            opacity: $op;
+        }
+    }
+}
+// hover line Animation width, bottom, left, border-width, border-color;
+// ex @include hover-line(calc(100% - 14px), 5px, 0, 2px, $point);
+@mixin hover-line($w, $b: 0, $l: 0, $border-w: 3px, $border-c: var(--point)) {
+    span {
+        display: inline-block;
+        position: relative;
+    }
+    span::after {
+        content: "";
+        position: absolute;
+        width: $w;
+        bottom: $b;
+        left: $l;
+        border-bottom: $border-w solid $border-c;
+        transform: scaleX(0);
+        transform-origin: 0 0;
+        transition: transform 0.3s ease-out;
+    }
+    &:focus,
+    &:hover {
+        span::after {
+            content: "";
+            position: absolute;
+            transform: scaleX(1);
+        }
+    }
+    &.on span::after {
+        transform: scaleX(1);
+        font-weight: 700;
+    }
+}
+@mixin hover-bg {
+    position: relative;
+    &:before {
+        content: "";
+        background: #7fdbff;
+        position: absolute;
+        width: 100%;
+        height: 5px;
+        bottom: 0;
+        left: 0;
+        border-radius: 5px;
+        transform: scaleX(0);
+        animation: 1.4s forwards no-hover-v linear;
+        animation-fill-mode: forwards;
+        z-index: -1;
+    }
+    &:hover:before,
+    &:focus:before {
+        animation: 0.5s forwards hover-v linear;
+        animation-fill-mode: forwards;
+    }
+}
+@mixin dltotable() {
+    > dl {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+        border-collapse: collapse;
+        border-spacing: 0;
+        > * {
+            display: table-cell;
+            vertical-align: middle;
+        }
+    }
+}
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: left;
+    align-items: center;
+}
+@mixin flex-row-wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+@mixin arr-up($size: 10px, $color: #000) {
+    position: absolute;
+    content: "";
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+}
+@mixin arr-right($size: 10px, $color: #000) {
+    position: absolute;
+    content: "";
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+}
+@mixin arr-let($size: 10px, $color: #000) {
+    position: absolute;
+    content: "";
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-right: $size solid $color;
+}
+@mixin arr-down($size: 10px, $color: #000) {
+    position: absolute;
+    content: "";
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-top: $size solid $color;
+}
+@mixin pseudo($display: block, $pos: absolute, $content: "") {
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+@mixin placeholder($color) {
+    &::-webkit-input-placeholder {
+        color: $color;
+    }
+    &:-moz-placeholder {
+        color: $color;
+    }
+    &::-moz-placeholder {
+        color: $color;
+    }
+    &::placeholder {
+        color: $color;
+        opacity: 1;
+    }
+    &:-ms-input-placeholder {
+        color: $color;
+    }
+    &::-ms-input-placeholder {
+        color: $color;
+    }
+}
+@mixin list-bullet($position: 10px, $size: 4px, $dotColor: $point) {
+    position: relative;
+    padding-left: 12px;
+    &:before {
+        content: "";
+        position: absolute;
+        top: $position;
+        left: 0;
+        display: block;
+        width: $size;
+        height: $size;
+        background-color: $dotColor;
+        border-radius: 50%;
+    }
+    [dir="rtl"] & {
+        padding-left: 0;
+        padding-right: 12px;
+        &:before {
+            right: 0;
+        }
+    }
+}
+@mixin line-clamp($lineNum: 3, $lineheight: 16px) {
+    // 3줄제한
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: $lineNum;
+    -webkit-box-orient: vertical;
+    .ie & {
+        display: block;
+        height: $lineNum * $lineheight;
+        overflow: hidden;
+    }
+}
+// 리스트타입
+// 초기화
+@mixin list-reset {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    ul,
+    ol {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+@mixin bg-dot-x($step1: 4, $step2: 2) {
+    // background-image: linear-gradient(90deg, #000, #000 75%, transparent 75%, transparent 100%);
+    position: relative;
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 1px;
+        background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.2) $step1 + px, transparent $step2 + px);
+        background-size: ($step1 + $step2) + px 1px;
+    }
+}
+@mixin bg-dot-y($step1: 4, $step2: 2) {
+    // background-image: linear-gradient(90deg, #000, #000 75%, transparent 75%, transparent 100%);
+    position: relative;
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1px;
+        height: 100%;
+        background-image: linear-gradient($bd-color $step1 + px, rgba(255, 255, 255, 0) $step2 + px);
+        background-position: right;
+        background-size: 1px ($step1 + $step2) + px;
+        background-repeat: repeat-y;
+    }
+}
+@mixin ico-plus($w: 15px, $h: 15px, $border: 3px) {
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        background-color: $black;
+        width: $w;
+        height: $border;
+    }
+    &::before {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &:after {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(90deg);
+    }
+}
+
+@mixin gboder($bdsize: 2px, $c1, $c2) {
+    position: relative;
+    background-clip: padding-box;
+    $border: $bdsize;
+    border: solid $border transparent;
+    background-color: #fff;
+    &:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        margin: -$border;
+        border-radius: inherit;
+        background: linear-gradient(to right, $c1, $c2);
+    }
+}
+
+@mixin underline($color: #000, $size: 1px, $position: 100%) {
+    display: inline;
+    background-image: linear-gradient(120deg, $color 0%, $color 100%);
+    background-repeat: no-repeat;
+    background-size: 0 $size;
+    background-position: 0 $position;
+    transition: background-size 0.5s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+    &:hover,
+    &:focus {
+        background-size: 100% $size;
+    }
+}
+@mixin layerFixedMobile() {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 10000;
+    .closer {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 80px;
+        height: 80px;
+        font-size: 30px;
+        color: $white;
+    }
+}
+
+@mixin hoverOpercity($op: 1, $t: 0.3s) {
+    img {
+        transition: all $t ease-out;
+        transform: translate(-50%, -50%);
+    }
+    &:hover,
+    &:active,
+    &:focus {
+        .photo-img {
+            border-color: var(--skyblue);
+            transition: all 1s ease-out;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        img {
+            opacity: $op;
+        }
+    }
+}
+@mixin box($w: 1px, $padding: 30px 40px) {
+    position: relative;
+    // border: $w solid $midnightblue;
+    // background-color: $thbgcolor;
+    padding: $padding;
+    border-radius: 5px;
+    margin-top: 16px;
+}
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: left;
+    align-items: center;
+}
+@mixin flex-row-wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin vbar {
+    background: url(/static/commons/img/vbar.png) no-repeat 0 50%;
+}
+// @mixin triangle($size: 14px) {
+// 	width: 0px;
+// 	height: 0px;
+// 	border-top: $size solid $point;
+// 	border-bottom: $size solid none;
+// 	border-right: $size solid transparent;
+// 	border-left: $size solid transparent;
+// }
+@mixin size($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin square($size) {
+    @include size($size, $size);
+}
+@mixin hoverScale($sacle: 1.03, $t: 0.3s) {
+    img {
+        transition: all $t ease-out;
+    }
+    &:hover,
+    &:active,
+    &:focus {
+        img {
+            transform: scale($sacle);
+        }
+    }
+}

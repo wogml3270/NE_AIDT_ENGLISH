@@ -1,0 +1,51 @@
+{
+  "name": "superart",
+  "update": "2024-02-01",
+  "version": "1.1.0",
+  "description": "sass,gulp,webserver,mail,sprite,imagemin ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "superart@xten.co.kr",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.27.5",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-cached": "^1.1.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-filter": "^7.0.0",
+    "gulp-headerfooter": "^1.0.3",
+    "gulp-if": "^3.0.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-inline-css": "^4.0.0",
+    "gulp-livereload": "^4.0.2",
+    "gulp-minify-html": "^1.0.6",
+    "gulp-replace": "^1.1.3",
+    "gulp-sass": "^5.1.0",
+    "gulp-sitemap": "^8.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-watch": "^5.0.1",
+    "sass": "^1.54.1"
+  },
+  "dependencies": {
+    "@sentry/browser": "^6.10.0",
+    "@sentry/tracing": "^6.10.0",
+    "chokidar": "^3.5.2",
+    "gulp-batch": "^1.0.5",
+    "gulp-cache": "^1.1.3",
+    "gulp-clean": "^0.4.0",
+    "gulp-image-resize": "^0.13.1",
+    "gulp-remove-content": "^1.0.1",
+    "gulp-remove-empty-lines": "^0.1.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sitemap-files": "^1.0.2",
+    "gulp-svg-sprite": "^2.0.3",
+    "gulp.spritesmith": "^6.12.1",
+    "merge": "^2.1.1",
+    "npm": "^7.24.2",
+    "proto-list": "^1.2.4"
+  }
+}

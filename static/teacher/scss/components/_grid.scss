@@ -1,0 +1,91 @@
+
+$columns: 12;
+$gap: 30px;
+
+// flexbox Common Grid
+.flexGrid {
+	box-sizing: border-box;
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 1em;
+	gap: $gap; // Define your gap size here, e.g., $gap: 16px;
+	width: 100%;
+	&.vt{
+		align-items: flex-start;
+		#content & h2{
+			margin-top: 0;
+		}
+	}
+	&.center{
+		justify-content: center;
+	}
+	&.gap0{
+		gap:0;
+	}
+	&.gap-10{
+		gap:10px;
+	}
+	&.lg-nowrap{
+		@include breakpoint($lg){
+			flex-wrap: nowrap;
+		}
+	}
+	&.bordered{
+		border-top: 1px dotted $bd-color;
+		padding-top: 10px;
+		margin-top: 10px;
+		&.top{
+			border-top:2px solid $black;
+		}
+		&:last-child{
+			border-bottom: 1px dotted $bd-color;
+		}
+	}
+	@for $i from 1 through 12 {
+		.col-xs-#{$i},
+		.col-sm-#{$i},
+		.col-md-#{$i},
+		.col-lg-#{$i},
+		.col-#{$i} {
+			box-sizing: border-box;
+			width: 100%;
+		}
+	}
+  
+	@for $i from 1 through 12 {
+		.col-#{$i} {
+		  width: calc((100% - (#{$gap} * 11)) / 12 * #{$i} + #{$gap} * (#{$i} - 1));
+		}
+	}
+	@include breakpoint($xs) {
+		@for $i from 1 through 12 {
+			.col-xs-#{$i} {
+				width: calc((100% - (#{$gap} * 11)) / 12 * #{$i} + #{$gap} * (#{$i} - 1));
+			}
+		}
+	}
+	@include breakpoint($md) {
+		@for $i from 1 through 12 {
+			.col-sm-#{$i} {
+				width: calc((100% - (#{$gap} * 11)) / 12 * #{$i} + #{$gap} * (#{$i} - 1));
+			}
+		}
+	}
+	@include breakpoint($md) {
+		@for $i from 1 through 12 {
+			.col-md-#{$i} {
+				width: calc((100% - (#{$gap} * 11)) / 12 * #{$i} + #{$gap} * (#{$i} - 1));
+			}
+		}
+	}
+	@include breakpoint($lg) {
+		@for $i from 1 through 12 {
+			.col-lg-#{$i} {
+				width: calc((100% - (#{$gap} * 11)) / 12 * #{$i} + #{$gap} * (#{$i} - 1));
+			}
+			.col-lg-offset-#{$i} {
+				margin-left: calc((100% - (#{$gap} * 11)) / 12 * #{$i} + #{$gap} * (#{$i} - 1));
+			}
+		}
+	}
+}

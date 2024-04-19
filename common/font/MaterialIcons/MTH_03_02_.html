@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>교사 수업실행</title>
+	<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+	<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+	<!-- <link rel="stylesheet" href="/static/teacher/css/landing_high.css" /> --> <!-- landing -->
+	<link rel="stylesheet" href="/static/teacher/css/sub_high.css" />
+	
+	<!-- <script src="/bundle/exe/js/q.js"></script>
+	<script src="/bundle/exe/js/run.js"></script>
+
+	<script src="/common/js/socket.io.rel.js"></script>
+	<script src="/common/emul/abr.net.js"></script>
+	<script src="/common/js/aidt_util.js"></script>
+	< // !--실시간 서버 에뮬용 파일--  //>
+	
+	<script src="/teacher/js/aidt_model.js"></script>
+
+	<script src="/common/js/mirroring.js"></script>
+
+	<script src="/teacher/js/aidt_ui.js"></script>
+	<script src="/teacher/js/aidt_controller.js"></script>
+	
+	<script src="/overdraw/js/draw/lowLevelEditor.js"></script>
+	<script src="/overdraw/js/draw/abrCEditor.js"></script>
+	<script src="/overdraw/js/draw/abrCBoard.js"></script>
+	<script src="/overdraw/js/draw/overDrawCtl.js"></script> -->
+	
+	<script src="/common/lib/jquery-3.7.1.min.js"></script>
+	<script src="/static/teacher/js/teacher.js"></script>
+</head>
+
+<body class="sub">
+	<div class="debug MTH0302"></div>
+	<div class="skip">
+		<a href="#content">본문 바로가기</a>
+	</div>
+
+	<div class="wrap teaching">
+		<!-- lnb -->
+		<aside class="lnb">
+			<div class="lnb--inner">
+				<div class="lnb--header">
+					<button type="button" class="lnb--closer"><span>닫기</span></button>
+					<h1 class="line-three">Ⅱ. 방정식과 부등식  |  4. 이차방정식과 이차함수의 관계  |  (10) 이차방정식과 이차함수의 관계 / 이차함수의 그래프...</h1>
+				</div>
+				<nav class="lnb--nav">
+					<ul>
+						<li>
+							<h3>도입</h3>
+							<ul>
+								<li><a href="">RSA 암호에 대하여</a></li>
+								<li><a href="">책 '미래가 온다'</a></li>
+								<li><a href="">영화 '내셔널 드레져'</a></li>
+								<li><a href="">에라토스테네스의 채로 에라토스테</a></li>
+								<li><a href="">에라토스테네스의 채로 에라토스테</a></li>
+							</ul>
+						</li>
+						<li>
+							<h3>전개</h3>
+							<ul>
+								<li><a href="">사각형 만들기</a></li>
+								<li><a href="">문항 묶음(소수와 합성수)</a></li>
+								<li><a href="">문항 묶음(거듭제곱)</a></li>
+							</ul>
+						</li>
+						<li>
+							<h3>마무리</h3>
+							<ul>
+								<li><a href="">사각형 만들기</a></li>
+								<li><a href="">문항 묶음(소수와 합성수)</a></li>
+								<li><a href="">문항 묶음(거듭제곱)</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<button type="button" class="lnb--closer"><span>닫기</span></button>
+		</aside>
+		<!-- //lnb -->
+
+
+		<header>
+			<div class="toolbar">
+				<nav>
+					<div class="group type1">
+						<button type="button" class="b-t-add"><span>첨삭하기</span></button>
+						<button type="button" class="b-t-mon"><span>모니터링</span></button>
+						<button type="button" class="b-t-cus"><span>맞춤학습 배포</span></button>
+						<button type="button" class="b-t-req"><span>질문하기</span></button>
+						<button type="button" class="b-t-pri"><span>교사전용자료 보기</span></button>
+					</div>
+					<div class="group type2">
+						<button type="button" class="b-t-time"><span>타이머</span></button>
+						<button type="button" class="b-t-conc"><span>주의 집중</span></button>
+						<button type="button" class="b-t-tack"><span>톡 보드</span></button>
+					</div>
+					<div class="group type3">
+						<button type="button" class="b-t-small"><span>축소하기</span></button>
+					</div>
+				</nav>
+			</div>
+			<label for="SUGGESTCHK">학생들과 연결되어 있습니다. 
+				<div class="checkbox--btn w-md"><input type="checkbox" name="" id="SUGGESTCHK"><i></i> 
+					<span class="on">on</span> 
+					<span class="off">off</span>
+				</div>
+			</label>
+		</header>
+		<!-- main -->
+		<div class="main">
+			<!-- messageBox -->
+			<div class="messageTop bottomLeft">
+				<div class="messageTop--inner">
+					<p class="message">학생들이 문항 학습 중이예요! 학습 현황을 <span class="yellow">모니터링</span> 해보세요.</p>
+				</div>
+			</div>
+			<!-- //messageBox -->
+
+			<!-- main Content(팝업일 경우 대비) -->
+			<div class="mainContent box-iframe" id="content">
+				<!-- iframe Roader : 1667x938 -->
+				<div class="iframeRoader">
+					<iframe src="/static/teacher/_empty.html" frameborder="0" width="1667" height="938"></iframe>
+				</div>
+			</div>
+
+			<!-- //main Content -->
+
+		</div>
+		<!-- //main -->
+		<!-- pageCtrl -->
+		<div class="pageCtrl">
+			<button type="button" class="pageCtrl--prev"><span class="material-symbols-outlined">arrow_back_ios</span><i class="blind">이전 페이지로 이동</i>
+			</button>
+			<span class="pageCtrl--count"><i class="blind">현재 페이지 : </i><strong>1</strong> / <i class="blind">총 페이지 : </i><span>20</span></span>
+			<button type="button" class="pageCtrl--next"><span class="material-symbols-outlined" aria-hidden="true">arrow_forward_ios</span><i class="blind">이전 페이지로 이동</i>
+			</button>
+		</div>
+		<!-- //pageCtrl -->
+		
+	</div>
+</body>
+
+</html>

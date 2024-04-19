@@ -1,0 +1,40 @@
+@media (prefers-color-scheme: light) {}
+
+@media (prefers-color-scheme: dark) {}
+
+[data-theme=light],
+:root {
+	/* default Color */
+	--black: #1d1c1a;
+  --black: #343434;
+  --greyish-brown: #5a5a5a;
+  --dirt-brown: #614b2e;
+  --camo-green: #4d371b;
+  --greyish-brown: #4b463f;
+  --brownish-grey: #817361;
+  --purplish-grey: #79757b;
+  --purpley-grey: #a39da6;
+  --putty: #c4b096;
+  --beige: #e9dbc9;
+  --very-light-pink: #fff9f2;
+  --white: #fff;
+  --light-tan: #fbd79e;
+  --golden-rod: #f1c40f;
+  --melon: #ff7f50;
+  --orangered: #ff4c0d;
+  --green-blue: #00b894;
+  --cerulean: #0086cc;
+  --sand: #dfba80;
+  --sand-two: #ebbf7b;
+  --light-brown: #ac8851;
+  --brownish-orange: #e36030;
+  --black-two: #000;
+  --dusty-lavender: #b9b3bc;
+
+	/* User Color */
+	
+}
+[data-theme=dark] {
+
+	
+}

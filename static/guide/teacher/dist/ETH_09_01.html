@@ -1,0 +1,121 @@
+static/guide/teacher/top.html<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>수업하기_실행기_모니터링</title>
+    <link rel="stylesheet" href="/static/teacher/css/styles_09_01.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <img
+            src="/static/teacher/img/ico/monitor.svg"
+            alt="Monitoring Icon"
+          />
+          <h1>모니터링</h1>
+        </div>
+        <label class="switch">
+          <span class="switch_label">개인 정보 숨기기</span>
+          <input type="checkbox" />
+          <span class="slider">
+            <span class="off">OFF</span>
+            <span class="on">ON</span>
+          </span>
+        </label>
+      </header>
+      <div class="contents">
+        <section class="side_wrap">
+          <div class="monitoring">
+            <img src="/static/teacher/img/tmp/aside_left_menu1_1@2x.png" />
+          </div>
+          <div class="monitoring_text">
+            <p>Lesson 1 About Me and You</p>
+            <p>Intro</p>
+            <p>어휘 - 플래시 카드</p>
+          </div>
+        </section>
+        <section class="list_wrap">
+          <div class="connecting">
+            <span>접속 중</span>
+            <span><strong>28</strong>/32</span>
+          </div>
+          <div class="grid_wrap"></div>
+          <div class="connecting absent_title">
+            <span>결석</span>
+            <span><strong>4</strong></span>
+          </div>
+          <div class="grid_wrap">
+            <div class="grid_box absent">
+              <div>**</div>
+              <div class="grid_card">
+                <span>학*이*학*이*학*이</span>
+                <span><img src="/static/teacher/img/ico/back.svg" />결석</span>
+              </div>
+            </div>
+            <div class="grid_box absent">
+              <div>**</div>
+              <div class="grid_card">
+                <span>학*이*학*이*학*이</span>
+                <span><img src="/static/teacher/img/ico/back.svg" />결석</span>
+              </div>
+            </div>
+            <div class="grid_box absent">
+              <div>**</div>
+              <div class="grid_card">
+                <span>학*이*학*이*학*이</span>
+                <span><img src="/static/teacher/img/ico/back.svg" />결석</span>
+              </div>
+            </div>
+            <div class="grid_box absent">
+              <div>**</div>
+              <div class="grid_card">
+                <span>학*이*학*이*학*이</span>
+                <span><img src="/static/teacher/img/ico/back.svg" />결석</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const gridWrap = document.querySelector(".grid_wrap");
+
+        const gridLength = 30;
+
+        for (let i = 0; i < gridLength; i++) {
+          const gridBox = document.createElement("div");
+          gridBox.classList.add("grid_box");
+
+          const asterisksDiv = document.createElement("div");
+          asterisksDiv.textContent = "**";
+
+          const gridCard = document.createElement("div");
+          gridCard.classList.add("grid_card");
+
+          const span1 = document.createElement("span");
+          span1.textContent = "학*이*학*이*학*이";
+
+          const span2 = document.createElement("span");
+          span2.innerHTML =
+            '<img src="/static/teacher/img/ico/back.svg" />Lesson 1 > Intro';
+
+          const span3 = document.createElement("span");
+          span3.textContent = "어휘 - 플래시 카드";
+
+          gridCard.appendChild(span1);
+          gridCard.appendChild(span2);
+          gridCard.appendChild(span3);
+
+          gridBox.appendChild(asterisksDiv);
+          gridBox.appendChild(gridCard);
+
+          gridWrap.appendChild(gridBox);
+        }
+      });
+    </script>
+  </body>
+</html>
+static/guide/teacher/bottom.html

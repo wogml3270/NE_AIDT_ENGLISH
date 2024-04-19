@@ -1,0 +1,15 @@
+@import url("/static/font/OpenSans/opensans.css");
+@import url("/static/font/Noto_Sans_KR/notosans.css");
+@font-face {
+font-family: "Material Icons";
+font-style: normal;
+font-weight: 400;
+src: url("/static/font/MaterialIcons/MaterialIcons-Regular.woff") format("woff2"), url("/static/font/MaterialIcons/MaterialIcons-Regular.woff") format("woff");
+}
+@font-face {
+font-family: "Material Icons Outlined";
+font-style: normal;
+font-weight: 400;
+src: url("/static/font/MaterialIcons/MaterialIconsOutlined-Regular.woff") format("woff2"), url("/static/font/MaterialIcons/MaterialIconsOutlined-Regular.woff") format("woff");
+}
+/*# sourceMappingURL=font-dev.css.map */

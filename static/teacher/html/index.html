@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>교사용 대시보드</title>
+    <link rel="stylesheet" href="styles.scss" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="header__nav">
+        <div class="header__logo">
+          <img src="logo.png" alt="Logo" />
+          <!-- 로고 이미지 경로는 변경해야 합니다. -->
+        </div>
+        <ul class="header__menu">
+          <li class="header__menu-item header__menu-item--active">
+            <a href="#" class="header__menu-link">HOME</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="#" class="header__menu-link">학급 관리</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="#" class="header__menu-link">수업 관리</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="#" class="header__menu-link">자료 관리</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="#" class="header__menu-link">평가 관리</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="dashboard">
+      <main class="dashboard__content">
+        <section class="total">
+          <div class="total__item">
+            <p class="total__title">오늘의 수업</p>
+            <span class="total__count"><strong>3</strong> 개의 수업</span>
+          </div>
+          <div class="total__item">
+            <p class="total__title">마감 임박 과제</p>
+            <span class="total__count"><strong>3</strong> 개</span>
+          </div>
+          <div class="total__item">
+            <p class="total__title">학생 질문 미답변</p>
+            <span class="total__count"><strong>25</strong> 개</span>
+          </div>
+          <div class="total__item">
+            <p class="total__title">관심 필요 학생</p>
+            <span class="total__count"><strong>5</strong> 개</span>
+          </div>
+          <div class="total__item">
+            <p class="total__title">공지사항</p>
+            <span class="total__count"><strong>10</strong> 개 발행</span>
+          </div>
+        </section>
+        <section class="schedule">
+          <section class="schedule">
+            <header class="schedule__header">
+              <h2>시간표</h2>
+            </header>
+            <div class="schedule__grid">
+              <div class="schedule__cell">
+                <span class="schedule__time">1교시</span>
+                <span class="schedule__subject">수학</span>
+              </div>
+            </div>
+          </section>
+        </section>
+        <section class="schedule">
+          <!-- 일정표 내용 -->
+        </section>
+
+        <section class="statistics">
+          <!-- 통계 위젯 내용 -->
+        </section>
+
+        <section class="assignments">
+          <!-- 과제 목록 내용 -->
+        </section>
+      </main>
+    </div>
+
+    <!-- 
+	<footer class="footer">
+    푸터 내용
+  </footer> -->
+  </body>
+</html>

@@ -1,0 +1,104 @@
+@charset "UTF-8";
+/*  @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-std.min.css"); 용량 큼 but, 모양은 이쁨 Pretendard Std
+https://www.jsdelivr.com/package/npm/pretendard-std 참조 */
+/*@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-std-dynamic-subset.min.css"); /* 작은 용량 */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400..700,0,0");
+@import url("/static/common/css/common.css");
+/* prettier-ignore */
+[data-theme=light],
+:root {
+/* default Color */
+--black: #1d1c1a;
+--black: #343434;
+--greyish-brown: #5a5a5a;
+--dirt-brown: #614b2e;
+--camo-green: #4d371b;
+--greyish-brown: #4b463f;
+--brownish-grey: #817361;
+--purplish-grey: #79757b;
+--purpley-grey: #a39da6;
+--putty: #c4b096;
+--beige: #e9dbc9;
+--very-light-pink: #fff9f2;
+--white: #fff;
+--light-tan: #fbd79e;
+--golden-rod: #f1c40f;
+--melon: #ff7f50;
+--orangered: #ff4c0d;
+--green-blue: #00b894;
+--cerulean: #0086cc;
+--sand: #dfba80;
+--sand-two: #ebbf7b;
+--light-brown: #ac8851;
+--brownish-orange: #e36030;
+--black-two: #000;
+--dusty-lavender: #b9b3bc;
+/* User Color */
+}
+
+.material-symbols {
+font-family: "Material Symbols";
+font-weight: normal;
+font-style: normal;
+font-size: 24px;
+line-height: 1;
+letter-spacing: normal;
+text-transform: none;
+display: inline-block;
+white-space: nowrap;
+word-wrap: normal;
+direction: ltr;
+-webkit-font-feature-settings: "liga";
+-webkit-font-smoothing: antialiased;
+text-rendering: optimizeLegibility;
+font-feature-settings: "liga";
+}
+
+.material-symbols-outlined {
+font-family: "Material Symbols Outlined";
+font-weight: normal;
+font-style: normal;
+font-size: 24px;
+line-height: 1;
+letter-spacing: normal;
+text-transform: none;
+display: inline-block;
+white-space: nowrap;
+word-wrap: normal;
+-webkit-font-feature-settings: "liga";
+-webkit-font-smoothing: antialiased;
+text-rendering: optimizeLegibility;
+font-feature-settings: "liga";
+}
+
+.fill {
+font-variation-settings: "FILL" 1;
+}
+
+body {
+font-family: "Pretendard GOV Variable", "Pretendard GOV", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+.debug {
+position: fixed;
+z-index: -1;
+left: 0;
+top: 0;
+width: 100%;
+height: 100vh;
+overflow: hidden;
+text-align: center;
+opacity: 0.6;
+}
+.debug.ETH_00 {
+background: #000 url(/static/teacher/img/tmp/debug/ETH_00.png) no-repeat center center;
+}
+.debug.ETH_07_01 {
+background: #000 url(/static/teacher/img/tmp/debug/ETH_07_01.png) no-repeat center center;
+}
+
+[class^=ico-] {
+display: inline-block;
+}
+/*# sourceMappingURL=main_high.css.map */

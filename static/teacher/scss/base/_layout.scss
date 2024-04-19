@@ -1,0 +1,11 @@
+@import "util"; // mixin
+@import "aside"; // mixin
+
+.main-container{
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.content{
+	flex: 1;
+}

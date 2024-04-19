@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang='en'>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta charset='UTF-8'>
+	<title>MathML Examples</title>
+	<style>
+		body {
+			font-size: 1em;
+		}
+
+	</style>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js">  </script>
+	<script type="text/javascript">
+		/*
+			 Function based on code from
+			 https://github.com/mathjax/MathJax/issues/182
+	 */
+		function isMathMLNativelySupported() {
+			var hasMathML = false;
+			if (document.createElement) {
+				var div = document.createElement("div");
+				div.style.position = "absolute"; div.style.top = div.style.left = 0;
+				div.style.visibility = "hidden"; div.style.width = div.style.height = "auto";
+				div.style.fontFamily = "serif"; div.style.lineheight = "normal";
+				div.innerHTML = "<math><mfrac><mi>xx</mi><mi>yy</mi></mfrac></math>";
+				$("body").append(div);
+				hasMathML = div.offsetHeight > div.offsetWidth;
+			}
+			return hasMathML;
+		}
+
+		function setupMathjaxIfNeeded() {
+			if (isMathMLNativelySupported())
+				return true;
+			var scriptMathJax = document.createElement("script");
+			scriptMathJax.type = "text/javascript";
+			scriptMathJax.src = "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+			$("head").append(scriptMathJax);
+			return false;
+		}
+		$(document).ready(function () { setupMathjaxIfNeeded(); });
+	</script>
+</head>
+<body>
+	<h2>Area of a circle</h2>
+	<p>
+		<math xmlns='http://www.w3.org/1998/Math/MathML' display='block' role="math" aria-label="파이 알 제곱">
+			<mi>&#x03C0;<!-- p --></mi>
+			<mo>&#x2062;<!-- &InvisibleTimes; --></mo>
+			<msup>
+				<mi>r</mi>
+				<mn>2</mn>
+			</msup>
+		</math>
+	</p>
+	<h2>Quadratic Equation</h2>
+	<p>
+		<math xmlns='http://www.w3.org/1998/Math/MathML' display='block' role="math" aria-label="엑스 제곱 더하기 4 엑스 더하기 4 는 0">
+			<mrow>
+				<mrow>
+					<msup>
+						<mi>x</mi>
+						<mn>2</mn>
+					</msup>
+					<mo>+</mo>
+					<mrow>
+						<mn>4</mn>
+						<mo>&InvisibleTimes;</mo>
+						<mi>x</mi>
+					</mrow>
+					<mo>+</mo>
+					<mn>4</mn>
+				</mrow>
+				<mo>=</mo>
+				<mn>0</mn>
+			</mrow>
+		</math>
+	</p>
+	<h2>Quadratic Formula</h2>
+	<p>
+		<math xmlns='http://www.w3.org/1998/Math/MathML' display='block' role="math" aria-label="엑스는 마이너스 b 플러스 마이너스 루트 b 제곱 마이너스 4ac를 2a로 나눈 것과 같다">
+			<mrow>
+				<mi>x</mi>
+				<mo>=</mo>
+				<mfrac>
+					<mrow>
+						<mrow>
+							<mo>-</mo>
+							<mi>b</mi>
+						</mrow>
+						<mo>&PlusMinus;</mo>
+						<msqrt>
+							<mrow>
+								<msup>
+									<mi>b</mi>
+									<mn>2</mn>
+								</msup>
+								<mo>-</mo>
+								<mrow>
+									<mn>4</mn>
+									<mo>&InvisibleTimes;</mo>
+									<mi>a</mi>
+									<mo>&InvisibleTimes;</mo>
+									<mi>c</mi>
+								</mrow>
+							</mrow>
+						</msqrt>
+					</mrow>
+					<mrow>
+						<mn>2</mn>
+						<mo>&InvisibleTimes;</mo>
+						<mi>a</mi>
+					</mrow>
+				</mfrac>
+			</mrow>
+		</math>
+	</p>
+	<p>
+		<math xmlns='http://www.w3.org/1998/Math/MathML' display='block' role="math" aria-label="엑스는 분자 마이너스 b 플러스 마이너스 루트 b 제곱 마이너스 4ac이고, 분모는 2a와 같다">
+			<mrow>
+				<mi>x</mi>
+				<mo>=</mo>
+				<mfrac>
+					<mrow>
+						<mrow>
+							<mo>-</mo>
+							<mi>b</mi>
+						</mrow>
+						<mo>&PlusMinus;</mo>
+						<msqrt>
+							<mrow>
+								<msup>
+									<mi>b</mi>
+									<mn>2</mn>
+								</msup>
+								<mo>-</mo>
+								<mrow>
+									<mn>4</mn>
+									<mo>&InvisibleTimes;</mo>
+									<mi>a</mi>
+									<mo>&InvisibleTimes;</mo>
+									<mi>c</mi>
+								</mrow>
+							</mrow>
+						</msqrt>
+					</mrow>
+					<mrow>
+						<mn>2</mn>
+						<mo>&InvisibleTimes;</mo>
+						<mi>a</mi>
+					</mrow>
+				</mfrac>
+			</mrow>
+		</math>
+	</p>
+	<h2>Embedded table</h2>
+	<p>
+		<math xmlns='http://www.w3.org/1998/Math/MathML' display='block' role="math" aria-label="행렬 A는 첫번째 행이 x, y이고, 두 번째 행이 z, w인 행렬이다. ">
+			<mrow>
+				<mi>A</mi>
+				<mo>=</mo>
+				<mfenced open="[" close="]">
+					<mtable>
+						<mtr>
+							<mtd>
+								<mi>x</mi>
+							</mtd>
+							<mtd>
+								<mi>y</mi>
+							</mtd>
+						</mtr>
+						<mtr>
+							<mtd>
+								<mi>z</mi>
+							</mtd>
+							<mtd>
+								<mi>w</mi>
+							</mtd>
+						</mtr>
+					</mtable>
+				</mfenced>
+			</mrow>
+		</math>
+	</p>
+	<h2>Semantics (MathML tag - with content markup annotation)</h2>
+	<p>
+		<math xmlns='http://www.w3.org/1998/Math/MathML' display='block' role="math" aria-label="1부터 t까지 x에 대한 dx를 x로 나눈 것의 적분">
+			<mrow>
+				<semantics>
+					<mrow>
+						<msubsup>
+							<mo>&int;</mo>
+							<mn>1</mn>
+							<mi>t</mi>
+						</msubsup>
+						<mfrac>
+							<mrow>
+								<mo>&dd;</mo>
+								<mi>x</mi>
+							</mrow>
+							<mi>x</mi>
+						</mfrac>
+					</mrow>
+					<annotation-xml encoding="MathML-Content">
+						<apply>
+							<int />
+							<bvar>
+								<ci>x</ci>
+							</bvar>
+							<lowlimit>
+								<cn>1</cn>
+							</lowlimit>
+							<uplimit>
+								<ci>t</ci>
+							</uplimit>
+							<apply>
+								<divide />
+								<cn>1</cn>
+								<ci>x</ci>
+							</apply>
+						</apply>
+					</annotation-xml>
+				</semantics>
+			</mrow>
+		</math>
+	</p>
+	<p>
+		<math xmlns='http://www.w3.org/1998/Math/MathML' display='block' role="math" aria-label="인테그랄 1행 1에서 2행 t까지 분자 디엑스에 분모 x의 적분">
+			<mrow>
+				<semantics>
+					<mrow>
+						<msubsup>
+							<mo>&int;</mo>
+							<mn>1</mn>
+							<mi>t</mi>
+						</msubsup>
+						<mfrac>
+							<mrow>
+								<mo>&dd;</mo>
+								<mi>x</mi>
+							</mrow>
+							<mi>x</mi>
+						</mfrac>
+					</mrow>
+					<annotation-xml encoding="MathML-Content">
+						<apply>
+							<int />
+							<bvar>
+								<ci>x</ci>
+							</bvar>
+							<lowlimit>
+								<cn>1</cn>
+							</lowlimit>
+							<uplimit>
+								<ci>t</ci>
+							</uplimit>
+							<apply>
+								<divide />
+								<cn>1</cn>
+								<ci>x</ci>
+							</apply>
+						</apply>
+					</annotation-xml>
+				</semantics>
+			</mrow>
+		</math>
+	</p>
+	<h2>Polynomial Equation (with mstyle)</h2>
+	<p>
+		<math xmlns='http://www.w3.org/1998/Math/MathML' display='block' role="math" aria-label="a x 제곱 더하기 b x 더하기 c 는 0과 같다">
+			<mstyle mathcolor="blue" fontfamily="serif" displaystyle="true">
+				<mi> a </mi>
+				<msup>
+					<mi> x </mi>
+					<mn> 2 </mn>
+				</msup>
+				<mo> + </mo>
+				<mi> b </mi>
+				<mi> x </mi>
+				<mo> + </mo>
+				<mi> c </mi>
+				<mo> = </mo>
+				<mn> 0 </mn>
+			</mstyle>
+		</math>
+	</p>
+	<h2>Complex Equation</h2>
+	<p>
+		<math xmlns='http://www.w3.org/1998/Math/MathML' display='block' role="math" aria-label="2 곱하기 x 곱하기 마이너스 1 분의 16 더하기 마이너스 5의 제곱은 24와 15 분의 16과 같다.">
+			<mn> 2 </mn>
+			<mo> &#x2062; </mo>
+			<mi> x </mi>
+			<mo> &times; </mo>
+			<mo> - </mo>
+			<mfrac>
+				<mrow>
+					<mi> 1 </mi>
+				</mrow>
+				<mn> 16 </mn>
+			</mfrac>
+			<mo> + </mo>
+			<msup>
+				<mrow>
+					<mo> &minus; </mo>
+					<mn> 5 </mn>
+				</mrow>
+				<mn> 2 </mn>
+			</msup>
+			<mo> = </mo>
+			<mn> 24 </mn>
+			<mo> &#x2064; </mo>
+			<mfrac>
+				<mn> 15 </mn>
+				<mn> 16 </mn>
+			</mfrac>
+		</math>
+	</p>
+	<h2>E Equals MC Squared in Table</h2>
+	<p>
+		<math xmlns='http://www.w3.org/1998/Math/MathML' display='block' role="math" aria-label="E는 m 곱하기 c의 제곱">
+			<mrow>
+				<mi>E</mi>
+				<mo>=</mo>
+				<mrow>
+					<mi>m</mi>
+					<mo>&#x2062;</mo> <!--INVISIBLE TIMES-->
+					<msup>
+						<mi>c</mi>
+						<mn>2</mn>
+					</msup>
+				</mrow>
+			</mrow>
+		</math>
+	</p>
+	<h2>Broken Fences</h2>
+	<p>
+		<math xmlns='http://www.w3.org/1998/Math/MathML' display='block' role="math" aria-label="중괄호 안에 대괄호 안에 a 더하기 소괄호 안에 b 더하기 c 끝내고 빼기 d">
+			<mo>{</mo>
+			<mo>[</mo>
+			<mi>a</mi>
+			<mo>+</mo>
+			<mo>(</mo>
+			<mi>b</mi>
+			<mo>+</mo>
+			<mi>c</mi>
+			<mo>)</mo>
+			<mo>-</mo>
+			<mi>d</mi>
+			<mo>}</mo>
+		</math>
+	</p>
+	<h2>Fenced 1</h2>
+	<p>
+		<math xmlns='http://www.w3.org/1998/Math/MathML' display='block' role="math" aria-label="a 더하기 b">
+			<mfenced>
+				<mrow>
+					<mi> a </mi>
+					<mo> + </mo>
+					<mi> b </mi>
+				</mrow>
+			</mfenced>
+		</math>
+	</p>
+	<h2>GroupAligned</h2>
+	<p>
+	<div class="blind" id="simultaneous_01"> 두 개의 선형 방정식을 나타내며, 첫 번째 방정식은 8.44 곱하기 x 더하기 55 곱하기 y는 0과 같다. 두 번째 방정식은 3.1 곱하기 x 빼기 0.7 곱하기 y는 마이너스 1.1과 같다. </div>
+	<math xmlns='http://www.w3.org/1998/Math/MathML' display='block' role="math" aria-describedby="simultaneous_01">
+		<mtable groupalign="{decimalpoint left left decimalpoint left left decimalpoint}">
+			<mtr>
+				<mtd>
+					<mrow>
+						<mrow>
+							<mrow>
+								<maligngroup />
+								<mn> 8.44 </mn>
+								<mo> &#x2062;<!--INVISIBLE TIMES--> </mo>
+								<maligngroup />
+								<mi> x </mi>
+							</mrow>
+							<maligngroup />
+							<mo> + </mo>
+							<mrow>
+								<maligngroup />
+								<mn> 55 </mn>
+								<mo> &#x2062;<!--INVISIBLE TIMES--> </mo>
+								<maligngroup />
+								<mi> y </mi>
+							</mrow>
+						</mrow>
+						<maligngroup />
+						<mo> = </mo>
+						<maligngroup />
+						<mn> 0 </mn>
+					</mrow>
+				</mtd>
+			</mtr>
+			<mtr>
+				<mtd>
+					<mrow>
+						<mrow>
+							<!--mrow-->
+							<maligngroup />
+							<mn> 3.1 </mn>
+							<mo> &#x2062;<!--INVISIBLE TIMES--> </mo>
+							<maligngroup />
+							<mi> x </mi>
+							<!--/mrow-->
+							<maligngroup />
+							<mo> - </mo>
+							<mrow>
+								<maligngroup />
+								<mn> 0.7 </mn>
+								<mo> &#x2062;<!--INVISIBLE TIMES--> </mo>
+								<maligngroup />
+								<mi> y </mi>
+							</mrow>
+						</mrow>
+						<maligngroup />
+						<mo> = </mo>
+						<maligngroup />
+						<mrow>
+							<mo> - </mo>
+							<mn> 1.1 </mn>
+						</mrow>
+					</mrow>
+				</mtd>
+			</mtr>
+		</mtable>
+	</math>
+	</p>
+	<h2>Sine function</h2>
+	<p>
+		<math xmlns='http://www.w3.org/1998/Math/MathML' display='block' role="math" aria-label="사인 엑스 더하기 5">
+			<semantics>
+				<mrow>
+					<mrow>
+						<mi>sin</mi>
+						<mo>&#x2061;<!--FUNCTION APPLICATION--></mo>
+						<mfenced>
+							<mi>x</mi>
+						</mfenced>
+					</mrow>
+					<mo>+</mo>
+					<mn>5</mn>
+				</mrow>
+				<annotation-xml cd="mathmlkeys" name="contentequiv" encoding="MathML-Content">
+					<apply>
+						<plus />
+						<apply>
+							<sin />
+							<ci>x</ci>
+						</apply>
+						<cn>5</cn>
+					</apply>
+				</annotation-xml>
+				<annotation encoding="application/x-tex"> \sin x + 5 </annotation>
+			</semantics>
+		</math>
+	</p>
+	<h2>Enclosed</h2>
+	<p>
+		<!-- notation은 시각적 표현 -->
+		<math xmlns='http://www.w3.org/1998/Math/MathML' display='block' role="math" aria-label="x 더하기 y를 원과 사각형으로 감싼 것">
+			<menclose notation='circle box'>
+				<mi> x </mi>
+				<mo> + </mo>
+				<mi> y </mi>
+			</menclose>
+		</math>
+	</p>
+	<h2>Cubed Root of x</h2>
+	<p>
+		<math xmlns='http://www.w3.org/1998/Math/MathML' display='block' role="math" aria-label="x의 3제곱근">
+			<mrow>
+				<mroot>
+					<mi>x</mi>
+					<mn>3</mn>
+				</mroot>
+			</mrow>
+		</math>
+	</p>
+	<h2>Fourth Root of 64</h2>
+	<p>
+		<math xmlns='http://www.w3.org/1998/Math/MathML' display='block' role="math" aria-label="64의 4제곱근">
+			<mrow>
+				<mroot>
+					<mi>64</mi>
+					<mn>4</mn>
+				</mroot>
+			</mrow>
+		</math>
+	</p>
+	<h2>Cubed Root of x +1</h2>
+	<p>
+		<math xmlns='http://www.w3.org/1998/Math/MathML' display='block' role="math" aria-label="x의 3제곱근 더하기 1">
+			<mrow>
+				<mroot>
+					<mi>x</mi>
+					<mn>3</mn>
+				</mroot>
+				<mo>+</mo>
+				<mi>1</mi>
+			</mrow>
+		</math>
+	</p>
+	<h2>Fifth Root of x</h2>
+	<p>
+		<math xmlns='http://www.w3.org/1998/Math/MathML' display='block' role="math" aria-label="x의 5제곱근 ">
+			<mrow>
+				<mroot>
+					<mi>x</mi>
+					<mn>5</mn>
+				</mroot>
+			</mrow>
+		</math>
+	</p>
+	<h2>Minus one third Root of the quanity x plus 1</h2>
+	<p>
+		<math xmlns='http://www.w3.org/1998/Math/MathML' display='block' role="math" aria-label="x + 1의 마이너스 1/3 제곱근">
+			<mrow>
+				<mroot>
+					<mrow>
+						<mi>x</mi>
+						<mo>+</mo>
+						<mi>1</mi>
+					</mrow>
+					<mn>
+						<mfrac>
+							<mrow>
+								<mi>&minus;1</mi>
+							</mrow>
+							<mn>
+								<mi>3</mi>
+							</mn>
+						</mfrac>
+					</mn>
+				</mroot>
+			</mrow>
+		</math>
+	</p>
+
+	<h2>Cosign X</h2>
+	<p>
+		<math xmlns="http://www.w3.org/1998/Math/MathML" display='block' aria-label="코사인 x의 세제곱">
+			<mrow>
+				<mi>cos</mi>
+				<mo>&#8289;</mo>
+				<msup>
+					<mi>x</mi>
+					<mn>3</mn>
+				</msup>
+			</mrow>
+		</math>
+	</p>
+
+	<h2>복소수의 로그 정의</h2>
+	<p>
+		<math xmlns="http://www.w3.org/1998/Math/MathML" display='block' role="math" aria-label="로그 z는 z의 제곱의 제곱근의 로그 더하기 z의 아규먼트와 같다">
+			<mi>log</mi>
+			<mfenced>
+				<mrow>
+					<mi>z</mi>
+				</mrow>
+			</mfenced>
+			<mo>=</mo>
+			<mi>log</mi>
+			<mfenced>
+				<mrow>
+					<msqrt>
+						<msup>
+							<mi>z</mi>
+							<mn>2</mn>
+						</msup>
+					</msqrt>
+				</mrow>
+			</mfenced>
+			<mo>+</mo>
+			<mi>arg</mi>
+			<mfenced>
+				<mrow>
+					<mi>z</mi>
+				</mrow>
+			</mfenced>
+		</math>
+	</p>
+	<h2>적분형의 푸리에 변환</h2>
+	<p>
+		<math xmlns="http://www.w3.org/1998/Math/MathML" display='block' role="math" aria-label="F의 k는 1 나누기 2파이의 제곱근 곱하기 음의 무한대부터 무한대까지 e의 음의 i k x 곱하기 f의 x dx의 적분과 같다">
+			<mi>F</mi>
+			<mo>(</mo>
+			<mi>k</mi>
+			<mo>)</mo>
+			<mo>=</mo>
+			<mfrac>
+				<mn>1</mn>
+				<msqrt>
+					<mn>2</mn>
+					<mi>&pi;</mi>
+				</msqrt>
+			</mfrac>
+			<mi>&int;</mi>
+			<msubsup>
+				<mi>-&infin;</mi>
+				<mi>&infin;</mi>
+			</msubsup>
+			<mrow>
+				<mi>e</mi>
+				<mo>^</mo>
+				<mrow>
+					<mo>-</mo>
+					<mi>i</mi>
+					<mi>k</mi>
+					<mi>x</mi>
+				</mrow>
+				<mi>f</mi>
+				<mo>(</mo>
+				<mi>x</mi>
+				<mo>)</mo>
+				<mi>dx</mi>
+			</mrow>
+		</math>
+		</p>
+		<h2>베타 함수</h2>
+		<p>
+			<math xmlns="http://www.w3.org/1998/Math/MathML" display='block' role="math" aria-label="베타 함수의 x, y는 0부터 1까지 t의 x 마이너스 1 제곱 곱하기 1 마이너스 t의 y 마이너스 1 제곱 dt의 적분">
+				<mi>B</mi>
+				<mo>(</mo>
+				<mi>x</mi>
+				<mo>,</mo>
+				<mi>y</mi>
+				<mo>)</mo>
+				<mo>=</mo>
+				<mi>&int;</mi>
+				<msubsup>
+					<mn>0</mn>
+					<mn>1</mn>
+				</msubsup>
+				<mrow>
+					<mi>t</mi>
+					<msup>
+						<mo>^</mo>
+						<mrow>
+							<mi>x</mi>
+							<mo>-</mo>
+							<mn>1</mn>
+						</mrow>
+					</msup>
+					<mo>(</mo>
+					<mn>1</mn>
+					<mo>-</mo>
+					<mi>t</mi>
+					<mo>)</mo>
+					<msup>
+						<mo>^</mo>
+						<mrow>
+							<mi>y</mi>
+							<mo>-</mo>
+							<mn>1</mn>
+						</mrow>
+					</msup>
+					<mi>dt</mi>
+				</mrow>
+			</math>
+		</p>
+		<h2>라플라스 변환</h2>
+		<p>
+			<math xmlns="http://www.w3.org/1998/Math/MathML" display='block' role="math" aria-label="L 중괄호 열기 f의 t 닫기는 0부터 무한대까지 e의 마이너스 st 곱하기 f의 t dt의 적분">
+				<mrow>
+					<msub>
+						<mi>L</mi>
+					</msub>
+					<mo>{</mo>
+					<mrow>
+						<mi>f</mi>
+						<mo>(</mo>
+						<mi>t</mi>
+						<mo>)</mo>
+					</mrow>
+					<mo>}</mo>
+				</mrow>
+				<mo>=</mo>
+				<mrow>
+					<mi>&int;</mi>
+					<msubsup>
+						<mn>0</mn>
+						<mi>&infin;</mi>
+					</msubsup>
+					<mrow>
+						<mi>e</mi>
+						<mo>^</mo>
+						<mrow>
+							<mo>-</mo>
+							<mi>s</mi>
+							<mi>t</mi>
+						</mrow>
+						<mi>f</mi>
+						<mo>(</mo>
+						<mi>t</mi>
+						<mo>)</mo>
+						<mi>dt</mi>
+					</mrow>
+				</mrow>
+			</math>
+		</p>
+
+	<style>
+		.blind {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			margin: -1px;
+			padding: 0;
+			overflow: hidden;
+			clip: rect(0, 0, 0, 0);
+			border: 0;
+		}
+
+	</style>
+</body>
+</html>

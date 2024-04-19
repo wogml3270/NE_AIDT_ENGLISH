@@ -1,0 +1,53 @@
+// 간편인증화면 커스텀
+// 간편인증 스타일 파일은('/esign/oacx-ux.css') 모듈 업데이트가 될수도 있기때문에 수정하지 않는다.
+body #bgScrn {
+    position: fixed !important;
+    z-index: 100000;
+}
+body #oacxEmbededContents {
+    position: fixed !important;
+    z-index: 200000;
+    @include breakpoint(max-width 640px) {
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+    }
+    .list li input[type="radio"] {
+        border: none;
+    }
+    header .logo {
+        position: absolute;
+        width: 120px;
+        right: 2rem;
+        top: 0;
+        @include breakpoint($md) {
+            right: 1rem;
+        }
+        img {
+            opacity: 0;
+        }
+        background: url(/static/fss/img/common/CI_white.png) center center no-repeat;
+        background-size: contain;
+    }
+    
+    input[type="checkbox"] {
+        transform: translateY(0);
+    }
+    legend,
+    caption {
+        display: block !important;
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+    }
+    .userInfo select{
+        @media screen and (max-width:640px) {
+            margin-right: 10px !important;
+        }
+    }
+}

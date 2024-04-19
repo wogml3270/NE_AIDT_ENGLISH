@@ -1,0 +1,48 @@
+@mixin scrollbar($w : 10px, $h : 10px, $barcolor : #fff){
+	&::-webkit-scrollbar {
+		width : $w; /* 세로축 스크롤바 길이 */
+		height: $h; /* 가로축 스크롤바 길이 */
+	}
+	&::-webkit-scrollbar-track {
+		background-color: transparent;
+		background-color: rgba(255, 255, 255, 0.5);
+		background-color: #f0f1f2;
+		border-radius: 10px;
+	}
+	&::-webkit-scrollbar-track-piece {
+		background-color: transparent;
+	}
+	&::-webkit-scrollbar-thumb {
+		border-radius: 10px;
+		//   background-color: $pointcolor;
+		// background-color: rgba(8, 148, 253, 0.7);
+		background-color: $barcolor;
+		// 0059a9
+		// 02728D
+	}
+	&::-webkit-scrollbar-button {
+		background-color: darkblue;
+		// background-color: #ff00f0;
+		width: 20px;
+		height: 10px;
+	}
+	// &::-webkit-scrollbar-button:start {
+	// 	background-color: red; /* Top, Left 방향의 이동버튼 */
+	// 	background-color: #eee; /* Top, Left 방향의 이동버튼 */
+	// 	display: none;
+	// }
+	// &::-webkit-scrollbar-button:end {
+	// 	background-color: #eee; /* Bottom, Right 방향의 이동버튼 */
+	// 	display: none;
+	// }
+	&::-webkit-scrollbar-button:vertical:increment {
+	}
+	&::-webkit-scrollbar-button:vertical:decrement {
+	}
+	&::-webkit-scrollbar-corner {
+		background-color: violet; /* 우측 하단의 코너 부분 */
+	}
+	&::-webkit-resizer {
+		background-color: green;
+	}
+}

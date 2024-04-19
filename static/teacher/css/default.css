@@ -1,0 +1,538 @@
+@charset "UTF-8";
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400..700,0,0");
+@import url("https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css");
+@import url("/static/common/css/common.css");
+@import url("/common/lib/bootstrap/css/bootstrap.min.css");
+/* prettier-ignore */
+@import url(/static/common/img/svg/view/sprite.css);
+[data-theme=light],
+:root {
+/* default Color */
+--black: #1d1c1a;
+--black: #343434;
+--greyish-brown: #5a5a5a;
+--dirt-brown: #614b2e;
+--camo-green: #4d371b;
+--greyish-brown: #4b463f;
+--brownish-grey: #817361;
+--purplish-grey: #79757b;
+--purpley-grey: #a39da6;
+--putty: #c4b096;
+--beige: #e9dbc9;
+--very-light-pink: #fff9f2;
+--white: #fff;
+--light-tan: #fbd79e;
+--golden-rod: #f1c40f;
+--melon: #ff7f50;
+--orangered: #ff4c0d;
+--green-blue: #00b894;
+--cerulean: #0086cc;
+--sand: #dfba80;
+--sand-two: #ebbf7b;
+--light-brown: #ac8851;
+--brownish-orange: #e36030;
+--black-two: #000;
+--dusty-lavender: #b9b3bc;
+/* User Color */
+}
+
+.material-symbols {
+font-family: "Material Symbols";
+font-weight: normal;
+font-style: normal;
+font-size: 24px;
+line-height: 1;
+letter-spacing: normal;
+text-transform: none;
+display: inline-block;
+white-space: nowrap;
+word-wrap: normal;
+direction: ltr;
+-webkit-font-feature-settings: "liga";
+-webkit-font-smoothing: antialiased;
+text-rendering: optimizeLegibility;
+font-feature-settings: "liga";
+}
+
+.material-symbols-outlined {
+font-family: "Material Symbols Outlined";
+font-weight: normal;
+font-style: normal;
+font-size: 24px;
+line-height: 1;
+letter-spacing: normal;
+text-transform: none;
+display: inline-block;
+white-space: nowrap;
+word-wrap: normal;
+-webkit-font-feature-settings: "liga";
+-webkit-font-smoothing: antialiased;
+text-rendering: optimizeLegibility;
+font-feature-settings: "liga";
+}
+
+.fill {
+font-variation-settings: "FILL" 1;
+}
+
+body {
+font-family: "Pretendard GOV Variable", "Pretendard GOV", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+[class^=ico-] {
+display: inline-block;
+}
+
+.debug {
+position: fixed;
+z-index: -1;
+left: 0;
+top: 0;
+width: 100%;
+height: 100vh;
+overflow: hidden;
+text-align: center;
+opacity: 0.6;
+}
+.debug.ETH_00 {
+background: #000 url(/static/teacher/img/tmp/debug/ETH_00.png) no-repeat center center;
+}
+.debug.ETH_07_01 {
+background: #000 url(/static/teacher/img/tmp/debug/ETH_07_01.png) no-repeat center center;
+}
+
+.sidebar {
+padding: 20px;
+width: 380px;
+border: 1px solid #f00;
+border-radius: 0 30px 30px;
+margin-right: 20px;
+}
+.sidebar__section {
+margin-bottom: 20px;
+border: 1px solid #ddd;
+border-radius: 8px;
+}
+.sidebar__title {
+font-size: 1.2rem;
+color: #333;
+padding: 10px;
+margin: 0;
+background-color: #ffcc99;
+}
+.sidebar__content {
+padding: 10px;
+}
+
+.main-container {
+display: flex;
+flex-wrap: nowrap;
+}
+
+.content {
+flex: 1;
+}
+
+.header {
+display: flex;
+margin-bottom: 20px;
+}
+.header.vertical {
+flex-direction: column;
+justify-content: space-between;
+height: 100vh;
+}
+.header h1 {
+font-size: 20px;
+display: inline-block;
+}
+.header.top {
+height: 60px;
+border: 1px solid #f00;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.header .index {
+font-size: 20px;
+position: relative;
+display: inline-block;
+}
+.header .index__content {
+position: absolute;
+top: 60px;
+border: 1px solid #f00;
+font-size: 16px;
+background-color: var(--white);
+display: none;
+}
+.header__logo {
+margin-bottom: 2rem;
+}
+.header__logo img {
+max-width: 100%;
+}
+.header__menu {
+list-style: none;
+}
+.header__menu-item {
+margin-bottom: 0.5rem;
+}
+.header__menu-item--active {
+background-color: #34495e;
+}
+.header__menu-item:hover {
+background-color: #34495e;
+}
+.header__menu-link {
+text-decoration: none;
+color: white;
+display: block;
+padding: 0.5rem 1rem;
+transition: background-color 0.3s;
+}
+.header__menu-link:hover {
+text-decoration: underline;
+}
+
+/* prettier-ignore */
+.btn-set {
+margin: 25px 0;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: flex-end;
+align-items: center;
+gap: 8px;
+}
+.btn-set.c {
+justify-content: center;
+}
+.btn-set.r {
+justify-content: flex-end;
+}
+.btn-set.l {
+justify-content: flex-start;
+}
+.btn-set--both {
+justify-content: space-between;
+}
+.btn-set.bd {
+margin-top: 20px;
+padding-top: 25px;
+border-top: 1px solid #eee;
+}
+@media (max-width: 1000px) {
+.pagination-set + .btn-set {
+position: relative;
+z-index: 1;
+}
+}
+
+[class^=b-] {
+display: inline-flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+font-weight: 600;
+line-height: 1;
+height: 40px;
+border-radius: 10px;
+text-align: center;
+padding: 13px 13px;
+background-color: var(--pale-grey);
+border: 1px solid transparent;
+}
+@media (max-width: 1000px) {
+[class^=b-] {
+padding: 10px 18px;
+}
+}
+[class^=b-]::after, [class^=b-]::before {
+flex-shrink: 0;
+font-size: 20px;
+margin-right: 10px;
+}
+[class^=b-]:hover, [class^=b-]:focus {
+text-decoration: underline;
+text-underline-offset: 4px;
+}
+.round-md [class^=b-] {
+border-radius: 22px;
+}
+@media (max-width: 1000px) {
+[class^=b-] .btn-set {
+min-width: 90px;
+}
+}
+[class^=b-] .btn-set span {
+font-weight: normal;
+}
+
+/* .dialogs {
+  //display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  &.active {
+    display: block;
+  }
+} */
+[role=dialog] {
+box-sizing: border-box;
+padding: 15px 30px 30px;
+border-radius: 20px;
+min-height: 100vh;
+box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.27);
+border: solid 1px var(--warm-grey);
+background-color: #fcfcfc;
+}
+.navLeftTop [role=dialog] {
+background: rgba(255, 255, 255, 0.9);
+}
+[role=dialog].hidden {
+display: none;
+}
+@media (max-width: 1000px) {
+[role=dialog] {
+position: absolute;
+top: 50%;
+left: 50vw;
+transform: translate(-50%, -50%);
+min-width: 1060px;
+min-height: 87vh;
+}
+[role=dialog][data-size=lg] {
+min-width: 1520px;
+max-height: 87vh;
+}
+[role=dialog][data-size=sm] {
+min-width: 850px;
+min-height: 660px;
+}
+}
+[role=dialog][data-size=w_full] {
+min-width: 100%;
+min-height: 100%;
+width: 100%;
+height: 100vh;
+}
+[role=dialog] .b-primary {
+width: 110px;
+height: 34px;
+border-radius: 20px;
+background-color: var(--dialog-btn-color);
+color: var(--white);
+}
+[role=dialog] .dialog__head {
+margin-bottom: 30px;
+}
+[role=dialog] .dialog__head h2 {
+font-size: 26px;
+text-align: left;
+}
+[role=dialog] .dialog__body {
+overflow-y: auto;
+}
+[role=dialog] .dialog__body.hasDlgTable {
+height: 68vh;
+}
+[role=dialog] textarea {
+width: 100%;
+height: 110px;
+border: none;
+box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+background: var(--white-eight);
+padding: 10px;
+}
+[role=dialog] .btn-set {
+margin: 0;
+}
+
+.dialog_label {
+text-align: center;
+}
+.dialog_label i.tit::before {
+content: "\e88e";
+font-family: "Material Symbols Outlined";
+font-weight: normal;
+font-style: normal;
+display: inline-block;
+line-height: 1;
+vertical-align: baseline;
+text-transform: none;
+letter-spacing: normal;
+word-wrap: normal;
+white-space: nowrap;
+-webkit-font-smoothing: antialiased;
+text-rendering: optimizeLegibility;
+-moz-osx-font-smoothing: grayscale;
+font-feature-settings: "liga";
+-webkit-font-feature-settings: "liga";
+clear: both;
+display: block;
+margin-bottom: 10px;
+font-size: 42px;
+background: linear-gradient(#c75a99, #763b8c);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.dialog--closer {
+display: flex;
+justify-content: center;
+align-items: center;
+position: absolute;
+top: 15px;
+right: 15px;
+width: 40px;
+height: 40px;
+border-radius: 20px;
+background-color: var(--black);
+color: var(--white);
+}
+.dialog--closer::before {
+content: "\e5cd";
+font-family: "Material Symbols Outlined";
+font-weight: normal;
+font-style: normal;
+display: inline-block;
+line-height: 1;
+vertical-align: baseline;
+text-transform: none;
+letter-spacing: normal;
+word-wrap: normal;
+white-space: nowrap;
+-webkit-font-smoothing: antialiased;
+text-rendering: optimizeLegibility;
+-moz-osx-font-smoothing: grayscale;
+font-feature-settings: "liga";
+-webkit-font-feature-settings: "liga";
+transition: all 0.3s;
+font-size: 30px;
+}
+.dialog--closer:hover::before, .dialog--closer:focus::before, .dialog--closer:active::before {
+transform: rotate(-180deg);
+}
+
+.dialog_close_button img {
+border: 0;
+}
+
+.dialog_desc {
+padding: 10px 20px;
+}
+
+.dialog-backdrop {
+display: none;
+position: fixed;
+overflow-y: auto;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+z-index: 1000;
+background: rgba(0, 0, 0, 0.8);
+}
+.navLeftTop .dialog-backdrop {
+background: none;
+}
+.dialog-backdrop.active {
+display: block;
+}
+
+.no-scroll {
+overflow-y: auto !important;
+}
+
+.has-dialog {
+overflow: hidden;
+}
+
+.ico-qareq {
+width: 34px;
+height: 34px;
+background: url(/static/teacher/img/common/ico_qareq.png) no-repeat center center;
+display: inline-block;
+vertical-align: middle;
+margin-right: 5px;
+}
+
+.ico-myfile {
+width: 34px;
+height: 34px;
+background: url(/static/teacher/img/common/ico_myfile@2x.png) no-repeat center center/34px 34px;
+display: inline-block;
+vertical-align: middle;
+margin-right: 5px;
+}
+
+.dialogDl__list {
+margin-left: 30px;
+margin-right: 30px;
+}
+.dialogDl__list dt {
+font-size: 18px;
+margin-top: 40px;
+margin-bottom: 30px;
+}
+.dialogDl__list dd textarea {
+width: 100%;
+height: 64px;
+padding: 4px 10px;
+border: solid 1px var(--warm-grey);
+border-radius: 5px;
+margin-top: 10px;
+}
+
+.dialog__footer .btn-set.b-r {
+position: absolute;
+right: 50px;
+bottom: 33px;
+}
+
+[class*=svg-] {
+display: inline-block;
+}
+
+[class^=ico-] {
+display: inline-block;
+}
+
+a {
+color: var(--linkcolor);
+}
+a:link, a:visited {
+text-underline-offset: 3px;
+}
+a:hover, a:focus, a:active {
+color: #222;
+text-underline-offset: 4px;
+}
+
+html {
+font-size: 16px;
+}
+
+body {
+color: var(--body-font-color);
+line-height: 1.63;
+font-family: "pretendard", "Noto Sans KR", "Noto Sans", "AppleGothic", "맑은 고딕", "돋움", "dotum", Helvetica, Arial, sans-serif;
+word-break: keep-all;
+font-weight: 400;
+}
+@media (max-width: 1000px) {
+body {
+word-break: keep-all;
+}
+}
+body.ovh {
+position: relative;
+overflow: hidden;
+height: 100vh;
+}
+/*# sourceMappingURL=default.css.map */

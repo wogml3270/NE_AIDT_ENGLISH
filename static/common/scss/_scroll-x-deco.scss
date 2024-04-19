@@ -1,0 +1,38 @@
+.mobile-scroller-x {
+    @include breakpoint($md) {
+        position: relative;
+        height: 0;
+        display: block;
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            z-index: 1;
+            top: 2px;
+            // height: 20px;
+            // @include font-ico("\e9ec");
+            // font-size: 21px;
+            width: 93px;
+            height: 51px;
+            background: url(/static/portal/img/sub/icon-move@2x.png) 0 0 no-repeat;
+            background-size: 93px 51px;
+            animation: tableScrollAni 4s infinite;
+        }
+        margin-top: 30px;
+        width: 100%;
+    }
+}
+@keyframes tableScrollAni {
+    0% {
+        left: 46%;
+        opacity: 0.2;
+    }
+    50% {
+        left: 54%;
+        opacity: 1;
+    }
+    100% {
+        left: 46%;
+        opacity: 0.2;
+    }
+}

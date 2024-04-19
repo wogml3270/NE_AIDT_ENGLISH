@@ -1,0 +1,217 @@
+static/guide/teacher/top.html<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AI 디지털교과서 HTML List</title>
+    <link rel="shortcut icon" href="/static/guide/common/img/shortcut.ico" />
+    <link rel="stylesheet" href="/static/guide/common/css/reset.css" />
+    <link
+      rel="stylesheet"
+      href="/static/guide/common/css/jquery.treeview.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/static/guide/common/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="/static/guide/common/css/style.css" />
+    <script src="/common/lib/jquery-3.7.1.min.js"></script>
+    <!-- 
+.u::before { content: '수정'; background: #0f11c3; color: #fff; }
+.ok::before { content: '완료'; background: #5cbc55; color: #fff; }
+.e::before { content: '진행중'; background: #f00; color: #fff; }
+.f::before { content: '기존사이트에없음'; background: #ff0; color: #000; }
+.html::before { content: 'markup'; background: aqua; color: #000; }
+.todo::before { content: '작업대기중'; font-weight: bold; background: red;
+}
+ -->
+  </head>
+  <body>
+    <div id="bodyWrap">
+      <div id="header">
+        <h1>사이트명</h1>
+      </div>
+      <div id="side">
+        <h2>
+          <i class="fa fa-desktop"></i><span id="page_title2">WEB</span><br />
+          <span id="page_leng"></span><span id="complete_leng"></span>
+          <span>
+            <a
+              href="/static/guide/bluega/index.html"
+              target="_top"
+              class="page-info"
+              >styleGuide</a
+            >
+          </span>
+        </h2>
+        <div id="urls" class="links">
+          <button class="js-open" type="button">모두열기</button>
+          <button class="js-close" type="button">모두접기</button>
+          <button type="button" class="js-depth2-toggle">2뎁스토글</button>
+          <button type="button" class="js-depth3-toggle">3뎁스토글</button>
+          <script>
+            $(".js-open").click(function (e) {
+              e.preventDefault();
+              $(".expandable")
+                .removeClass("expandable")
+                .addClass("collapsable")
+                .find(">ul")
+                .show();
+              $(".hitarea")
+                .removeClass("expandable-hitarea")
+                .addClass("collapsable-hitarea");
+            });
+            $(".js-close").click(function (e) {
+              e.preventDefault();
+              $(".collapsable")
+                .removeClass("collapsable")
+                .addClass("expandable")
+                .find(">ul")
+                .hide();
+              $(".hitarea")
+                .removeClass("collapsable-hitarea")
+                .addClass("expandable-hitarea");
+            });
+            $(function () {
+              var depth2 = $("#navigation > li > ul ");
+              var depth2Toggle = true;
+              var depth3 = $("#navigation > li > ul > li > ul ");
+              var depth3Toggle = true;
+              $(".js-depth2-toggle").on("click", function () {
+                if (depth2Toggle == true) {
+                  depth2Toggle = false;
+                  depth2
+                    .find(".collapsable")
+                    .removeClass("collapsable")
+                    .addClass("expandable")
+                    .find(">ul")
+                    .hide();
+                  depth2
+                    .find(".hitarea")
+                    .removeClass("collapsable-hitarea")
+                    .addClass("expandable-hitarea");
+                } else {
+                  depth2Toggle = true;
+                  depth2
+                    .find(".expandable")
+                    .removeClass("expandable")
+                    .addClass("collapsable")
+                    .find(" > ul")
+                    .show();
+                  depth2
+                    .find(".hitarea")
+                    .removeClass("expandable-hitarea")
+                    .addClass("collapsable-hitarea");
+                }
+              });
+              $(".js-depth3-toggle").on("click", function () {
+                if (depth3Toggle == true) {
+                  depth3Toggle = false;
+                  depth3
+                    .find(".collapsable")
+                    .removeClass("collapsable")
+                    .addClass("expandable")
+                    .find(">ul")
+                    .hide();
+                  depth3
+                    .find(".hitarea")
+                    .removeClass("collapsable-hitarea")
+                    .addClass("expandable-hitarea");
+                } else {
+                  depth3Toggle = true;
+                  depth3
+                    .find(".expandable")
+                    .removeClass("expandable")
+                    .addClass("collapsable")
+                    .find(" > ul")
+                    .show();
+                  depth3
+                    .find(".hitarea")
+                    .removeClass("expandable-hitarea")
+                    .addClass("collapsable-hitarea");
+                }
+              });
+            });
+          </script>
+          <ul id="navigation">
+            <li>
+              <label><input type="checkbox" />교사용 영어</label>
+              <ul>
+                <li><a href="/static/guide/teacher/ETH_00.html">교사홈</a></li>
+                <li> <a href="/static/guide/teacher/ETH_01_01.html">알리미 </a> </li>
+                <li> <a href="/static/guide/teacher/ETH_02_01.html">메시지함 </a> </li>
+                <li> <a href="/static/guide/teacher/ETH_03_01.html">기본 수업 템플릿 </a> </li>
+                <li> <a href="/static/guide/teacher/ETH_04_01.html">학급 수업 템플릿 </a> </li>
+                <li> <a href="/static/guide/teacher/ETH_05_01.html" >수업 히스토리 </a> </li>
+                <li> <a href="/static/guide/teacher/ETH_06_01.html" >수업 대기화면<i class="page">2순위</i></a > </li>
+                <li> <a href="/static/guide/teacher/ETH_07_01.html">수업하기<i class="page">1순위</i></a> </li>
+                <li> <a href="/static/guide/teacher/ETH_08_01.html" >출석부 49~50<i class="page">1순위</i></a> </li>
+                <li> <a href="/static/guide/teacher/ETH_09_01.html">모니터링 46<i class="page">1순위</i></a> </li>
+                <li> <a href="/static/guide/teacher/ETH_10_01.html">학급 관리 </a> </li>
+                <li> <a href="/static/guide/teacher/ETH_11_01.html">과제 관리 </a> </li>
+                <li> <a href="/static/guide/teacher/ETH_12_01.html">평가 관리 </a> </li>
+                <li> <a href="/static/guide/teacher/ETH_13_01.html">AI Report </a> </li>
+              </ul>
+            </li>
+
+            <li>
+              <label><input type="checkbox" />학생용 영어</label>
+              <ul>
+                <li><a href="/static/guide/sudent/EST_00.html">학생홈 </a></li>
+                <li> <a href="/static/guide/sudent/EST_01_01.html">메시지함 </a> </li>
+                <li> <a href="/static/guide/sudent/EST_02_01.html" >나의 교실 기본 교과서 </a> </li>
+                <li> <a href="/static/guide/sudent/EST_03_01.html" >수업 히스토리 </a> </li>
+                <li> <a href="/static/guide/sudent/EST_04_01.html">AI 학습관 </a> </li>
+                <li> <a href="/static/guide/sudent/EST_05_01.html">과제 관리 </a> </li>
+                <li> <a href="/static/guide/sudent/EST_06_01.html">평가 관리 </a> </li>
+              </ul>
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              <label ><input type="checkbox" />챗봇 / 레이어 팝업, 페이지가 있지 않고 플로팅으로 항시 사용</label>
+              <ul>
+                <li> <a href="MST_06_01.html">MST_06_01</a><i class="page">P</i> </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <h2>
+          <i class="fa fa-desktop"></i> <span id="page_title2">WEB</span> <br />
+          <span id="page_leng_m"></span> <span id="complete_leng_m"></span>
+        </h2>
+      </div>
+      <!-- 리스트 끝 : e -->
+      <div id="frame">
+        <div class="ctrl">
+          <button type="button" id="btn_reload" class="btn_ctrl" title="새로고침" > <i class="fa fa-refresh"></i> </button>
+          <span class="pageurl_box">
+            <input type="text" name="url" id="page_url" value="페이지 주소" class="pageurl" readonly />
+            <span id="page_size"></span> <span id="page_title"></span>
+          </span>
+          <button type="button" id="btn_external" class="btn_ctrl" title="새창열기" > <i class="fa fa-external-link"></i> </button>
+          <button type="button" id="btn_mobile" class="btn_ctrl" title="모바일보기" > <i class="fa fa-mobile"></i> </button>
+          <button type="button" id="btn_desktop" class="btn_ctrl" title="PC보기" > <i class="fa fa-desktop"></i> </button>
+        </div>
+        <div class="iframe_wrap">
+          <iframe id="page_show"></iframe>
+          <button type="button" class="rotate">회전</button>
+        </div>
+      </div>
+    </div>
+    <script src="/static/guide/common/js/jquery.cookie.js"></script>
+    <script src="/static/guide/common/js/jquery.treeview.js"></script>
+    <script>
+      var mobile = false;
+      $("td").each(function (index, element) {
+        $(this).has(":contains()");
+      });
+      $('td:contains("HTML")').addClass("html");
+      $('td:contains("게시판")').addClass("board");
+      $('td:contains("API연계")').addClass("api");
+      var blank = false;
+    </script>
+    <script src="/static/guide/common/js/front.js"></script>
+  </body>
+</html>
+static/guide/teacher/bottom.html

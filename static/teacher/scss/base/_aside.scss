@@ -1,0 +1,43 @@
+.sidebar {
+  //background-color: var(--light-tan);
+  padding: 20px;
+  width: 380px;
+  border:1px solid #f00;
+  border-radius: 0 30px 30px;
+  margin-right: 20px;
+  &__section {
+    margin-bottom: 20px;
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    //background-color: #fff; 
+
+    &--intro {
+      
+    }
+
+    &--lesson {
+      
+    }
+
+    &--practice {
+      
+    }
+
+    &--listen-talk {
+      
+    }
+  }
+
+  &__title {
+    font-size: 1.2rem; 
+    color: #333; 
+    padding: 10px; 
+    margin: 0;
+    background-color: #ffcc99; 
+  }
+
+  &__content {
+    padding: 10px; 
+    
+  }
+}

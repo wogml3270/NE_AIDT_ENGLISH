@@ -1,0 +1,454 @@
+@use 'sass:math';
+
+
+
+
+// % 계산
+@function per($size, $contex: $mdwidth) {
+	//Default font size on html element is 100%, equivalent to 16px;
+	@return #{math.div($size , $contex) * 100%};
+}
+
+// pixel to em
+// $pixels 해당 요소 px
+// $context 브라우저 기본 사이즈 : 16px
+@function em($pixels, $context: $browser-context) {
+	@return #{math.div($pixels, $context)}em;
+}
+
+@function rem($pixels) {
+	@return #{math.div($pixels,$browser-context)}rem;
+}
+
+@mixin clearfix() {
+	display: block;
+
+	&:before,
+	&:after {
+		content: ".";
+		display: block;
+		height: 0;
+		clear: both;
+		visibility: hidden;
+	}
+}
+
+@mixin shadow() {
+	border-radius: 3px;
+	box-shadow: 3px 4px 7px rgba(0, 0, 0, 0.05);
+}
+
+@mixin ellipsis() {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	display: inline-block;
+}
+
+@mixin background-image-retina($file, $type, $width: auto, $height: auto) {
+	background-image: url($file + "." + $type);
+	background-repeat: no-repeat;
+	background-size: $width $height;
+
+	@media (-webkit-min-device-pixel-ratio: 2) {
+		& {
+			background-image: url($file + "@2x." + $type);
+		}
+	}
+}
+
+// 비율 이미지 박스
+@mixin aspect-ratio($w, $h) {
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		content: "";
+		display: block;
+		height: 0;
+		padding-top: per($h, $w);
+	}
+
+	img {
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 100%;
+		vertical-align: top;
+	}
+}
+
+@mixin aspectRatio($w, $h) {
+	display: block;
+	position: relative;
+	overflow: hidden;
+	border-radius: 5px;
+
+	&::before {
+		content: '';
+		display: block;
+		height: 0;
+		padding-top: per($h, $w);
+	}
+}
+
+@mixin mw {
+	max-width: 1276px;
+	margin: 0 auto;
+}
+
+@mixin headingfont() {
+	font-family: $heading-font;
+	font-weight: 300;
+}
+
+@mixin hover-opercity($op: 0.7, $t: 0.3s) {
+	img {
+		transition: all $t ease-out;
+		transform: translateY(-50%);
+	}
+
+	&:hover,
+	&:active,
+	&:focus {
+		.photo-img {
+			border-color: $skyblue;
+			transition: all 1s ease-out;
+			box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+		}
+
+		img {
+			opacity: $op;
+		}
+	}
+}
+
+// hover line Animation width, bottom, left, border-width, border-color;
+// ex @include hover-line(calc(100% - 14px), 5px, 0, 2px, $point);
+@mixin hover-line($w: 100%, $b: 0, $l: 0, $border-w: 3px, $border-c: $point) {
+	&::after {
+		content: "";
+		position: absolute;
+		width: $w;
+		bottom: $b;
+		left: $l;
+		border-bottom: $border-w solid $border-c;
+		transform: scaleX(0);
+		transform-origin: 100% 0;
+		transition: transform 0.3s ease-out;
+	}
+
+	&:focus,
+	&:hover {
+		&::after {
+			content: "";
+			position: absolute;
+			transform: scaleX(1);
+			transform-origin: 0 0;
+		}
+	}
+
+	&.on::after {
+		transform: scaleX(1);
+		font-weight: 700;
+		transform-origin: 0 0;
+		animation-delay: .8s;
+	}
+}
+
+@mixin hover-bg {
+	position: relative;
+
+	&:before {
+		content: "";
+		background: #7fdbff;
+		position: absolute;
+		width: 100%;
+		height: 5px;
+		bottom: 0;
+		left: 0;
+		border-radius: 5px;
+		transform: scaleX(0);
+		animation: 1.4s forwards no-hover-v linear;
+		animation-fill-mode: forwards;
+		z-index: -1;
+	}
+
+	&:hover:before,
+	&:focus:before {
+		animation: 0.5s forwards hover-v linear;
+		animation-fill-mode: forwards;
+	}
+}
+
+@mixin dltotable() {
+	>dl {
+		display: table;
+		width: 100%;
+		table-layout: fixed;
+		border-collapse: collapse;
+		border-spacing: 0;
+
+		>* {
+			display: table-cell;
+			vertical-align: middle;
+		}
+	}
+}
+@mixin paddingset() {
+	padding-left: var(--wrapper-padding);
+	padding-right: var(--wrapper-padding);
+}
+@mixin flex-row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: left;
+	align-items: center;
+}
+
+@mixin flex-row-wrap {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin arr-up($size: 10px, $color: #000) {
+	position: absolute;
+	content: "";
+	border-left: $size solid transparent;
+	border-right: $size solid transparent;
+	border-bottom: $size solid $color;
+}
+
+@mixin arr-right($size: 10px, $color: #000) {
+	position: absolute;
+	content: "";
+	border-top: $size solid transparent;
+	border-bottom: $size solid transparent;
+	border-left: $size solid $color;
+}
+
+@mixin arr-let($size: 10px, $color: #000) {
+	position: absolute;
+	content: "";
+	border-top: $size solid transparent;
+	border-bottom: $size solid transparent;
+	border-right: $size solid $color;
+}
+
+@mixin arr-down($size: 10px, $color: #000) {
+	position: absolute;
+	content: "";
+	border-left: $size solid transparent;
+	border-right: $size solid transparent;
+	border-top: $size solid $color;
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: "") {
+	content: $content;
+	display: $display;
+	position: $pos;
+}
+
+@mixin placeholder($color) {
+	&::placeholder {
+		color: $color;
+		opacity: 1;
+	}
+}
+
+@mixin list-bullet($position: 10px, $size: 4px, $dotColor: $point) {
+	position: relative;
+	padding-left: 12px;
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: $position;
+		left: 0;
+		display: block;
+		width: $size;
+		height: $size;
+		background-color: $dotColor;
+		border-radius: 50%;
+	}
+
+	[dir="rtl"] & {
+		padding-left: 0;
+		padding-right: 12px;
+
+		&:before {
+			right: 0;
+		}
+	}
+}
+
+@mixin line-clamp($lineNum: 2, $lineheight : 16px) {
+	// 2줄제한
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: block;
+	display: -webkit-box;
+	-webkit-line-clamp: $lineNum;
+	-webkit-box-orient: vertical;
+}
+
+// 리스트타입
+// 초기화
+@mixin list-reset {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+
+	ul,
+	ol {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+// 
+@mixin linearGradient() {
+	// background-image: linear-gradient(90deg, #000, #000 75%, transparent 75%, transparent 100%);
+	background-image: linear-gradient(137deg, #d9509c 0%, #d9509c 27%, #763b8c 100%);
+	background-position: 0 100%;
+	background-repeat: no-repeat;
+	//background-size: 100% 2px;
+	/* @keyframes duration | easing-function | delay | iteration-count | direction | fill-mode | play-state | name */
+	transition: background-size .3s ease;
+}
+
+@mixin bg-dot-x($step1: 4, $step2: 2) {
+	// background-image: linear-gradient(90deg, #000, #000 75%, transparent 75%, transparent 100%);
+	position: relative;
+
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 1px;
+		background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.2) $step1 + px, transparent $step2 + px);
+		background-size: ($step1 + $step2) + px 1px;
+	}
+}
+
+@mixin bg-dot-y($step1: 4, $step2: 2) {
+	// background-image: linear-gradient(90deg, #000, #000 75%, transparent 75%, transparent 100%);
+	position: relative;
+
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 1px;
+		height: 100%;
+		background-image: linear-gradient($bd-color $step1 + px, rgba(255, 255, 255, 0) $step2 + px);
+		background-position: right;
+		background-size: 1px ($step1 + $step2) + px;
+		background-repeat: repeat-y;
+	}
+}
+
+@mixin ico-plus($w: 15px, $h: 15px, $border: 3px) {
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		background-color: $black;
+		width: $w;
+		height: $border;
+	}
+
+	&::before {
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	&:after {
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%) rotate(90deg);
+	}
+}
+
+// 반응형 fontsize
+@mixin fontsize($lg, $md, $sm) {
+	font-size: $lg;
+
+	@include breakpoint($mdw) {
+		font-size: $md;
+	}
+
+	@include breakpoint($md) {
+		font-size: $sm;
+	}
+}
+
+// gradient-border(#763b8c, #c55999)
+@mixin gradient-border($color1: #763b8c, $color2: #c55999) {
+	border-color: transparent;
+	border-image-source: linear-gradient(275deg, $color1, $color2);
+	border-image-slice: 1;
+	background-image: linear-gradient(to bottom, #fff, #fff), linear-gradient(275deg, $color1, $color2);
+	background-origin: border-box;
+	background-clip: content-box, border-box;
+	background-color: $white;
+}
+
+@mixin triangle_box($direction, $size, $color) {
+	width: 0;
+	height: 0;
+
+	@if $direction =='up' {
+		border-left: em($size) solid transparent;
+		border-right: em($size) solid transparent;
+		border-bottom: em($size) solid $color;
+	}
+
+	@else if $direction =='down' {
+		border-left: em($size) solid transparent;
+		border-right: em($size) solid transparent;
+		border-top: em($size) solid $color;
+	}
+
+	@else if $direction =='right' {
+		border-top: em($size) solid transparent;
+		border-bottom: em($size) solid transparent;
+		border-left: em($size) solid $color;
+	}
+
+	@else if $direction =='left' {
+		border-top: em($size) solid transparent;
+		border-bottom: em($size) solid transparent;
+		border-right: em($size) solid $color;
+	}
+}
+
+
+@mixin flexCenter() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+@mixin flexSpaceBetweenCenter() {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+@mixin inlineFlexCenter() {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+}

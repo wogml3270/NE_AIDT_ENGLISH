@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>수업하기_실행기_출석부</title>
+    <link rel="stylesheet" href="/static/teacher/css/styles_08_01.css" />
+  </head>
+  <body>
+    <main>
+      <header class="header">
+        <div>
+          <h1>
+            <span>2024년 5월 23일</span>
+            <span>1학년 1반</span>
+            <span>Lesson 1 About and You</span>
+          </h1>
+        </div>
+        <label class="switch">
+          <span class="switch_label">개인 정보 숨기기</span>
+          <input type="checkbox" />
+          <span class="slider">
+            <span class="off">OFF</span>
+            <span class="on">ON</span>
+          </span>
+        </label>
+      </header>
+      <div class="contents">
+        <section class="list_wrap">
+          <div class="list_wrap_group">
+            <div class="connecting">
+              <span>출석부</span>
+              <span><strong>28</strong>/32</span>
+            </div>
+            <button class="refresh">
+              <img src="/static/teacher/img/ico/refresh-arrow.svg" />
+              <span>새로 고침</span>
+            </button>
+          </div>
+          <div class="table_group">
+            <table class="table_style">
+              <thead>
+                <tr>
+                  <th>접속</th>
+                  <th>번호</th>
+                  <th>이름</th>
+                  <th>학습 컨디션</th>
+                  <th>성실한학생</th>
+                  <th>협동심</th>
+                  <th>발표</th>
+                  <th>출결</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <div class="save_btn">
+            <button>저장하기</button>
+          </div>
+        </section>
+        <section class="info">
+          <div class="name">
+            <span>**</span>
+            <span>학*이*학*이*학*이*</span>
+          </div>
+          <div class="memo">
+            <span>메모</span>
+            <textarea></textarea>
+            <div class="save_btn">
+              <button>저장하기</button>
+            </div>
+          </div>
+          <div class="point">
+            <span>역량 포인트</span>
+            <div class="point_group">
+              <div>
+                <span>성실한학생</span>
+                <img src="/static/teacher/img/ico/badge_1.png" />
+                <div>
+                  <button>-</button>
+                  <span class="count">1</span>
+                  <button>+</button>
+                </div>
+              </div>
+              <div>
+                <span>협동심</span>
+                <img src="/static/teacher/img/ico/badge_2.png" />
+                <div>
+                  <button>-</button>
+                  <span class="count">50</span>
+                  <button>+</button>
+                </div>
+              </div>
+              <div>
+                <span>발표</span>
+                <img src="/static/teacher/img/ico/badge_3.png" />
+                <div>
+                  <button>-</button>
+                  <span class="count">100</span>
+                  <button>+</button>
+                </div>
+              </div>
+            </div>
+            <div class="save_btn">
+              <button>저장하기</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script>
+      const tableBody = document.querySelector(".table_style tbody");
+
+      const numberOfRows = 20;
+
+      for (let i = 0; i < numberOfRows; i++) {
+        let tr = document.createElement("tr");
+
+        tr.innerHTML = `
+        <td><span></span></td>
+        <td>**</td>
+        <td>학*이*학*이*학*이*</td>
+        <td>매우 좋아</td>
+        <td>1</td>
+        <td>50</td>
+        <td>100</td>
+        <td><button>출석</button></td>
+    `;
+        tableBody.appendChild(tr);
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const buttons = document.querySelectorAll(
+          ".point_group div > div button"
+        );
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const counter = this.parentNode.querySelector(".count");
+            let countValue = parseInt(counter.textContent, 10);
+
+            if (this.textContent === "+" && countValue < 100) {
+              countValue++;
+            } else if (this.textContent === "-") {
+              countValue = countValue > 0 ? countValue - 1 : 0;
+            }
+
+            counter.textContent = countValue;
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

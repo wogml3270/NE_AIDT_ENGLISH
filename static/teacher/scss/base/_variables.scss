@@ -1,0 +1,39 @@
+// font size
+/* prettier-ignore */
+$browser-context: 16; // Default html font size 설정
+$html-font-size: 16px; // html font size 설정
+$body-font-size: 1.125rem; // 18px
+$fz-xs: 0.875rem; // 14px
+$btn-font-size: 1.125rem; // 18px
+$form-height: 45px; // 폼, 폼에 들어가는 버튼 높이
+
+// $xs: max-width 359px;
+// $sm: max-width 749px;
+// $xl: 1300px;
+
+$md: max-width 1000px;  // tablet 세로 형
+$lg: 1200px;  // tablet 가로 형
+$xg: 1500px; // pc
+
+// board list color
+$bd-topwidth: 1px;
+
+// input
+$form-height: 40px;
+// button
+$btn-height: $form-height;
+
+$m1: 20px;
+$m2: 34px;
+// input
+$formHeight: 40px;
+
+
+$font-set: "pretendard", "Noto Sans KR", "Noto Sans", "AppleGothic", "맑은 고딕", "돋움", "dotum", Helvetica, Arial, sans-serif;
+
+
+@mixin m1() {
+    @include breakpoint($max-md) {
+        margin-left: $m1;
+    }
+}

@@ -1,0 +1,26 @@
+.visible-xs,
+.visible-sm,
+.visible-md,
+.visible-lg {
+  display: none !important;
+}
+@media (min-width: 1024px) {
+  .visible-lg {
+    display: block !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .visible-md {
+    display: block !important;
+  }
+}
+@media (max-width: 767px) {
+  .visible-sm {
+    display: block !important;
+  }
+}
+@media (max-width: 459px) {
+  .visible-xs {
+    display: block !important;
+  }
+}

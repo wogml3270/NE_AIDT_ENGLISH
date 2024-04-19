@@ -1,0 +1,68 @@
+@mixin table($w: 750px) {
+    $mobile-table-width: $w;
+    $head-text-color: $black;
+    $body-text-color: $black;
+    $head-cell-padding: 15px 4px;
+    --head-cell-padding: 8px 3px;
+    --body-cell-padding: 8px 3px;
+    @include breakpoint($md) {
+        --head-cell-padding: 14px 4px;
+        --body-cell-padding: 10px 4px;
+    }
+    @include breakpoint($lg) {
+        --head-cell-padding: 18px 4px;
+        // --body-cell-padding: 18px 4px;
+    }
+    table-layout: fixed;
+    position: relative;
+    text-align: center;
+    table {
+        width: 100%;
+        color: $body-text-color;
+    }
+    th,
+    td {
+        border: 1px solid var(--bdcolor);
+        padding: var(--body-cell-padding);
+    }
+    th {
+        font-weight: 400;
+        line-height: 1.5;
+        font-size: 1rem;
+        padding: var(--head-cell-padding);
+        color: $head-text-color;
+        background: $td-bg-color;
+    }
+    thead th {
+        padding: var(--head-cell-padding);
+        background-color: $th-bg-color;
+    }
+    thead + tbody tr:first-child > * {
+        border-top-width: 0;
+    }
+    tbody {
+        th,
+        td {
+        }
+    }
+    &.ovx {
+        @include breakpoint($md) {
+            overflow-x: auto;
+            position: relative;
+            table {
+                width: $mobile-table-width;
+            }
+        }
+    }
+    &.fixed table {
+        table-layout: fixed;
+    }
+    &--row {
+        th {
+            width: 16.67%;
+            vertical-align: middle;
+            background-color: $th-bg-color;
+            border-bottom: 1px solid var(--bdcolor);
+        }
+    }
+}
