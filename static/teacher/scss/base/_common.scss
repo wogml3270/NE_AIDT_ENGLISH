@@ -1,0 +1,65 @@
+
+/* 스크롤 바 */
+::-webkit-scrollbar {
+	height: calc(100% - 50px);
+	width: 8px;
+	//background: linear-gradient(transparent 11px, #2e645b 11px, #2e645b 16px, transparent 17px );
+	//box-shadow: none;
+}
+::-webkit-scrollbar-button{
+	display: none;
+}
+::-webkit-scrollbar-track {
+	height: calc(100% - 50px);
+	width: 4px;
+	background: transparent;
+	background: linear-gradient(to right, transparent 2px, #929292 2px, #929292 6px, transparent 6px );
+	box-shadow: none;
+	border-radius: 0;
+	cursor: pointer;
+}
+::-webkit-scrollbar-thumb {
+	width: 8px;
+	border-radius: 10px;
+	overflow: hidden;
+	background: var(--brownish-grey);
+	box-shadow: 0 0 5px rgba(255, 255, 255, 1);
+	cursor: pointer;
+}
+
+::-webkit-scrollbar:horizontal {
+    height: 8px; /* 가로 스크롤바의 높이 지정 */
+    background: linear-gradient(to bottom, transparent 2px, #929292 2px, #929292 6px, transparent 6px); /* 배경 그라디언트 */
+}
+/* 스크롤 바 :: light */
+aside {
+	h3{
+		margin-top: 30px;
+		&:first-child{
+			margin-top: 0;
+		}
+	}
+	::-webkit-scrollbar {
+	}
+	::-webkit-scrollbar-button{
+		display: none;
+	}
+	::-webkit-scrollbar-track {
+		height: calc(100% - 50px);
+		width: 4px;
+		background: transparent;
+		background: linear-gradient(to right, transparent 2px, #757575 2px, #757575 6px, transparent 6px );
+		box-shadow: none;
+		border-radius: 0;
+		cursor: pointer;
+	}
+	::-webkit-scrollbar-thumb {
+		width: 20px;
+		border-radius: 10px;
+		overflow: hidden;
+		background: var(--white);
+		box-shadow: 0 0 3px rgba(0, 0, 0, 1);
+		cursor: pointer;
+	}
+}
+

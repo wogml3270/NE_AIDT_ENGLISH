@@ -1,0 +1,19 @@
+.study{
+	.main-container{
+		height: calc(100vh - 80px - 20px);
+		&.full-main .rightSet {
+			width: calc(100% - 60px);
+			margin: 0 auto;
+		}
+		.rightSet{
+			width: calc(100% - 420px);
+			&.main-header-top{
+				display: flex;
+				flex-direction: column;
+				&.tool-reverse{
+					flex-direction: column-reverse;
+				}
+			}
+		}
+	}
+}

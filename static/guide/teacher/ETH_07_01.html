@@ -7,24 +7,55 @@
 <title>수업하기</title>
 <link rel="stylesheet" href="/static/teacher/css/sub_high.css">
 </head>
-<body>
+<body class="ovh study">
 <!-- debug -->
-<div class="debug ETH_07_01"></div>
+<!-- <div class="debug ETH_07_01"></div> -->
 <div class="skip">
 	<a href="#content">본문 바로가기</a>
 </div>
 <header class="header top">
 	<div class="header__title">
-		<h1>Lesson 1 <span>About Me and You</span></h1>
+		<h1>Lesson 1 <span>About Me and You</span> <i class="vline" aria-hidden="true"></i></h1>
 		<!-- 목차 선택 -->
-		<div class="index">
-			<button type="button" class="index__button">Intro</button>
-			<div class="index__content">
+		<div class="index expandedSet">
+			<button type="button" class="index--opener" aria-expanded="false">Intro</button>
+			<div class="index__content" tabindex="-1">
 				<nav class="index__nav">
 					<ul class="index__list">
 						<li class="index__item"><a href="#" class="index__link">Lesson 1 About Me and You</a>
 							<ul class="index__sublist">
+								<li class="index__subitem"><a href="#" class="index__link on">Intro</a></li>
+								<li class="index__subitem"><a href="#" class="index__link">Listen & Talk</a></li>
+								<li class="index__subitem"><a href="#" class="index__link">Real-Life Communication</a></li>
+								<li class="index__subitem"><a href="#" class="index__link">Read</a></li>
+								<li class="index__subitem"><a href="#" class="index__link">After you Read</a></li>
+								<li class="index__subitem"><a href="#" class="index__link">Culture Focus</a></li>
+								<li class="index__subitem"><a href="#" class="index__link">Language Focus</a></li>
+								<li class="index__subitem"><a href="#" class="index__link">Think & Write</a></li>
+								<li class="index__subitem"><a href="#" class="index__link">Lesson Review</a></li>
+							</ul>
+						</li>
+						<li class="index__item"><a href="#" class="index__link">Lesson 2 A Delicious World</a>
+							<ul class="index__sublist">
 								<li class="index__subitem"><a href="#" class="index__link">Intro</a></li>
+								<li class="index__subitem"><a href="#" class="index__link">Listen & Talk</a></li>
+								<li class="index__subitem"><a href="#" class="index__link">Real-Life Communication</a></li>
+								<li class="index__subitem"><a href="#" class="index__link">Read</a></li>
+								<li class="index__subitem"><a href="#" class="index__link">After you Read</a></li>
+								<li class="index__subitem"><a href="#" class="index__link">Culture Focus</a></li>
+								<li class="index__subitem"><a href="#" class="index__link">Language Focus</a></li>
+								<li class="index__subitem"><a href="#" class="index__link">Think & Write</a></li>
+								<li class="index__subitem"><a href="#" class="index__link">Lesson Review</a></li>
+							</ul>
+						</li>
+						<li class="index__item"><a href="#" class="index__link">Lesson 3 My Bright Future</a>
+							<ul class="index__sublist">
+								<li class="index__subitem"><a href="#" class="index__link">Intro</a></li>
+							</ul>
+						</li>
+						<li class="index__item"><a href="#" class="index__link">Lesson 1 About Me and You</a>
+							<ul class="index__sublist">
+								<li class="index__subitem"><a href="#" class="index__link on">Intro</a></li>
 								<li class="index__subitem"><a href="#" class="index__link">Listen & Talk</a></li>
 								<li class="index__subitem"><a href="#" class="index__link">Real-Life Communication</a></li>
 								<li class="index__subitem"><a href="#" class="index__link">Read</a></li>
@@ -60,271 +91,365 @@
 		<!-- //목차 선택 --> 
 	</div>
 	<div class="header__status"> 
-		<span class="header__status__text">같은 화면 보는 중</span> 
-		<span class="header__status__item">
+		<p class="header__status__text">
+			<span class="material-symbols-outlined fill" aria-hidden="true">radio_button_unchecked</span>
+			같은 화면 보는 중
+		</p> 
+		<div class="header__status__item">
 			<button type="button" class="header__status--clear bg-blue">해제</button>
-		</span> </div>
-	<div class="header__user">
-	<div class="header__user__info"> 
-		<strong class="header__user__class">
-			1학년 1반 <span class="mynumber"><i class="blind">번호</i>28/<i class="blind">전체 인원</i>30</span> 
-		</strong> 
+		</div> 
 	</div>
-	<div class="header__button">
-		<button type="button" class="header__button--monitering">모니터링</button>
-		<button type="button" class="header__button--maximise">화면 최대화</button>
-		<button type="button" class="header__button--exit">수업 종료</button>
+	<div class="header__user">
+		<div class="header__user__info"> 
+			<strong class="header__user__class">
+				1학년 1반 <span class="mynumber"><i class="blind">번호</i>28/<i class="blind">전체 인원</i>30</span> 
+			</strong> 
+		</div>
+		<div class="header__user__btns">
+			<button type="button" class="btn btn--monitering">모니터링</button>
+			<button type="button" class="btn btn--maximise"><span class="blind">화면 최대화</span></button>
+			<button type="button" class="btn btn--logout">수업 종료</button>
+		</div>
 	</div>
 </header>
 <div class="main-container">
 	<aside class="sidebar">
-		<div class="sidebar__button">
-			<button type="button" class="sidebar__button--sequence">순서 변경</button>
-			<button type="button" class="sidebar__button--showhide">수업안 숨기기</button>
-			<button type="button" class="sidebar__button--leftFixed">우측으로 고정</button>
-		</div>
-		<div class="sidebar__section sidebar__section--intro">
-			<h2 class="sidebar__title">Intro</h2>
-			<div class="sidebar__content">
-				<h3 class="sidebar__chapter">1차시</h3>
-				<ul class="sidebar__list">
-					<!-- roop -->
-					<li class="sidebar__item">
-						<div class="sidebar__opening">
-							<button type="button"><span>학생들에게 열어주기</span></button>
-						</div>
-						<a href="#" class="sidebar__link"> 
-							<img src="/static/teacher/img/tmp/aside_left_menu1_1@2x.png" alt="" srcset=""> 
-							<span class="sidebar__link-title">어휘 - 플래시카드</span> 
-						</a> 
-						<!-- 설정 메뉴 -->
-						<div class="chapter-settings"> 
-							<a href="#" class="chapter-settings__configure">설정하기</a>
-							<div class="chapter-settings__menu"> 
-								<a href="#" class="chapter-settings__option chapter-settings__option--edit">평가로 발행하기</a> 
-								<a href="#" class="chapter-settings__option chapter-settings__option--homework">과제로 추가하기</a> 
-								<a href="#" class="chapter-settings__option chapter-settings__option--delete">콘텐츠 삭제하기</a> 
-								<a href="#" class="chapter-settings__option chapter-settings__option--add">아래에 콘텐츠 추가하기</a> 
+		<button type="button" class="sidebar--visible">수업안</button>
+		<div class="sidebarSet">
+			<div class="sidebar__button">
+				<button type="button" class="sidebar__button--sequence">순서 변경</button>
+				<button type="button" class="sidebar__button--showhide">수업안 숨기기</button>
+				<button type="button" class="sidebar__button--leftFixed">우측으로 고정</button>
+				<button type="button" class="sidebar__button--rightFixed dn">좌측으로 고정</button>
+			</div>
+			<div class="sidebar__section sidebar__section--intro scrollY">
+				<h2 class="sidebar__title">Intro</h2>
+				<div class="sidebar__content">
+					<h3 class="sidebar__chapter"><span>1차시</span></h3>
+					<ul class="sidebar__list">
+						<!-- roop -->
+						<li class="sidebar__item">
+							<div class="sidebar__opening">
+								<button type="button" class="on"><i class="blind">학생들에게 열기</i></button>
+								<!-- <button type="button" class="off"><i class="blind">학생들에게 닫기</i></button> -->
 							</div>
-						</div>
-						<!--//설정 메뉴 -->
-					</li>
-					<!-- //roop -->
-				</ul>
+							<a href="#" class="sidebar__link active" title="선택됨">
+								<img src="/static/teacher/img/tmp/aside_left_menu1_1@2x.png" alt="" srcset="">
+								<span class="sidebar__link-title">어휘 - 플래시카드</span>
+							</a>
+							<!-- 설정 메뉴 -->
+							<div class="chapter-settings expandedSet">
+								<a href="#" class="chapter-settings__configure" aria-expanded="false"><i class="blind">설정하기</i></a>
+								<div class="chapter-settings__menu">
+									<a href="#" class="chapter-settings__option chapter-settings__option--edit">평가로 발행하기</a>
+									<a href="#" class="chapter-settings__option chapter-settings__option--homework">과제로 추가하기</a>
+									<a href="#" class="chapter-settings__option chapter-settings__option--delete">콘텐츠 삭제하기</a>
+									<a href="#" class="chapter-settings__option chapter-settings__option--add">아래에 콘텐츠 추가하기</a>
+								</div>
+							</div>
+							<!--//설정 메뉴 -->
+						</li>
+						<!-- //roop -->
+						<li class="sidebar__item">
+							<div class="sidebar__opening">
+								<button type="button" class="off"><i class="blind">학생들에게 닫기</i></button>
+							</div>
+							<a href="#" class="sidebar__link">
+								<img src="/static/teacher/img/tmp/aside_left_menu1_1.png" alt="" srcset="/static/teacher/img/tmp/aside_left_menu1_1@2x.png 2x">
+								<span class="sidebar__link-title">어휘 - 드릴</span>
+							</a>
+							<div class="chapter-settings expandedSet">
+								<a href="#" class="chapter-settings__configure" aria-expanded="false"><i class="blind">설정하기</i></a>
+								<div class="chapter-settings__menu">
+									<a href="#" class="chapter-settings__option chapter-settings__option--edit">평가로 발행하기</a>
+									<a href="#" class="chapter-settings__option chapter-settings__option--homework">과제로 추가하기</a>
+									<a href="#" class="chapter-settings__option chapter-settings__option--delete">콘텐츠 삭제하기</a>
+									<a href="#" class="chapter-settings__option chapter-settings__option--add">아래에 콘텐츠 추가하기</a>
+								</div>
+							</div>
+						</li>
+						<li class="sidebar__item">
+							<div class="sidebar__opening">
+								<button type="button" class="off"><i class="blind">학생들에게 닫기</i></button>
+							</div>
+							<a href="#" class="sidebar__link">
+								<img src="/static/teacher/img/tmp/aside_left_menu1_2@2x.png" alt="" srcset="/static/teacher/img/tmp/aside_left_menu1_2@2x.png 2x">
+								<span class="sidebar__link-title">어휘 - 드릴</span>
+							</a>
+							<div class="chapter-settings expandedSet">
+								<a href="#" class="chapter-settings__configure" aria-expanded="false"><i class="blind">설정하기</i></a>
+								<div class="chapter-settings__menu">
+									<a href="#" class="chapter-settings__option chapter-settings__option--edit">평가로 발행하기</a>
+									<a href="#" class="chapter-settings__option chapter-settings__option--homework">과제로 추가하기</a>
+									<a href="#" class="chapter-settings__option chapter-settings__option--delete">콘텐츠 삭제하기</a>
+									<a href="#" class="chapter-settings__option chapter-settings__option--add">아래에 콘텐츠 추가하기</a>
+								</div>
+							</div>
+						</li>
+						<li class="sidebar__item">
+							<div class="sidebar__opening">
+								<button type="button" class="off"><i class="blind">학생들에게 닫기</i></button>
+							</div>
+							<a href="#" class="sidebar__link">
+								<img src="/static/teacher/img/tmp/aside_left_menu1_1@2x.png" alt="" srcset="">
+								<span class="sidebar__link-title">어휘 - 플래시카드</span>
+							</a>
+							<div class="chapter-settings expandedSet">
+								<a href="#" class="chapter-settings__configure" aria-expanded="false"><i class="blind">설정하기</i></a>
+								<div class="chapter-settings__menu">
+									<a href="#" class="chapter-settings__option chapter-settings__option--edit">평가로 발행하기</a>
+									<a href="#" class="chapter-settings__option chapter-settings__option--homework">과제로 추가하기</a>
+									<a href="#" class="chapter-settings__option chapter-settings__option--delete">콘텐츠 삭제하기</a>
+									<a href="#" class="chapter-settings__option chapter-settings__option--add">아래에 콘텐츠 추가하기</a>
+								</div>
+							</div>
+						</li>
+						<li class="sidebar__item">
+							<div class="sidebar__opening">
+								<button type="button" class="off"><i class="blind">학생들에게 닫기</i></button>
+							</div>
+							<a href="#" class="sidebar__link">
+								<img src="/static/teacher/img/tmp/aside_left_menu1_1@2x.png" alt="" srcset="">
+								<span class="sidebar__link-title">어휘 - 플래시카드</span>
+							</a>
+							<div class="chapter-settings expandedSet">
+								<a href="#" class="chapter-settings__configure" aria-expanded="false"><i class="blind">설정하기</i></a>
+								<div class="chapter-settings__menu">
+									<a href="#" class="chapter-settings__option chapter-settings__option--edit">평가로 발행하기</a>
+									<a href="#" class="chapter-settings__option chapter-settings__option--homework">과제로 추가하기</a>
+									<a href="#" class="chapter-settings__option chapter-settings__option--delete">콘텐츠 삭제하기</a>
+									<a href="#" class="chapter-settings__option chapter-settings__option--add">아래에 콘텐츠 추가하기</a>
+								</div>
+							</div>
+						</li>
+						<li class="sidebar__item">
+							<div class="sidebar__opening">
+								<button type="button" class="off"><i class="blind">학생들에게 닫기</i></button>
+							</div>
+							<a href="#" class="sidebar__link">
+								<img src="/static/teacher/img/tmp/aside_left_menu1_1@2x.png" alt="" srcset="">
+								<span class="sidebar__link-title">어휘 - 플래시카드</span>
+							</a>
+							<div class="chapter-settings expandedSet">
+								<a href="#" class="chapter-settings__configure" aria-expanded="false"><i class="blind">설정하기</i></a>
+								<div class="chapter-settings__menu">
+									<a href="#" class="chapter-settings__option chapter-settings__option--edit">평가로 발행하기</a>
+									<a href="#" class="chapter-settings__option chapter-settings__option--homework">과제로 추가하기</a>
+									<a href="#" class="chapter-settings__option chapter-settings__option--delete">콘텐츠 삭제하기</a>
+									<a href="#" class="chapter-settings__option chapter-settings__option--add">아래에 콘텐츠 추가하기</a>
+								</div>
+							</div>
+						</li>
+						<li class="sidebar__item">
+							<div class="sidebar__opening">
+								<button type="button" class="off"><i class="blind">학생들에게 닫기</i></button>
+							</div>
+							<a href="#" class="sidebar__link">
+								<img src="/static/teacher/img/tmp/aside_left_menu1_1@2x.png" alt="" srcset="">
+								<span class="sidebar__link-title">어휘 - 플래시카드</span>
+							</a>
+							<div class="chapter-settings expandedSet">
+								<a href="#" class="chapter-settings__configure" aria-expanded="false"><i class="blind">설정하기</i></a>
+								<div class="chapter-settings__menu">
+									<a href="#" class="chapter-settings__option chapter-settings__option--edit">평가로 발행하기</a>
+									<a href="#" class="chapter-settings__option chapter-settings__option--homework">과제로 추가하기</a>
+									<a href="#" class="chapter-settings__option chapter-settings__option--delete">콘텐츠 삭제하기</a>
+									<a href="#" class="chapter-settings__option chapter-settings__option--add">아래에 콘텐츠 추가하기</a>
+								</div>
+							</div>
+						</li>
+						<li class="sidebar__item">
+							<div class="sidebar__opening">
+								<button type="button" class="off"><i class="blind">학생들에게 닫기</i></button>
+							</div>
+							<a href="#" class="sidebar__link">
+								<img src="/static/teacher/img/tmp/aside_left_menu1_1@2x.png" alt="" srcset="">
+								<span class="sidebar__link-title">어휘 - 플래시카드</span>
+							</a>
+							<div class="chapter-settings expandedSet">
+								<a href="#" class="chapter-settings__configure" aria-expanded="false"><i class="blind">설정하기</i></a>
+								<div class="chapter-settings__menu">
+									<a href="#" class="chapter-settings__option chapter-settings__option--edit">평가로 발행하기</a>
+									<a href="#" class="chapter-settings__option chapter-settings__option--homework">과제로 추가하기</a>
+									<a href="#" class="chapter-settings__option chapter-settings__option--delete">콘텐츠 삭제하기</a>
+									<a href="#" class="chapter-settings__option chapter-settings__option--add">아래에 콘텐츠 추가하기</a>
+								</div>
+							</div>
+						</li>
+						<li class="sidebar__item">
+							<div class="sidebar__opening">
+								<button type="button" class="off"><i class="blind">학생들에게 닫기</i></button>
+							</div>
+							<a href="#" class="sidebar__link">
+								<img src="/static/teacher/img/tmp/aside_left_menu1_1@2x.png" alt="" srcset="">
+								<span class="sidebar__link-title">어휘 - 플래시카드</span>
+							</a>
+							<div class="chapter-settings expandedSet">
+								<a href="#" class="chapter-settings__configure" aria-expanded="false"><i class="blind">설정하기</i></a>
+								<div class="chapter-settings__menu">
+									<a href="#" class="chapter-settings__option chapter-settings__option--edit">평가로 발행하기</a>
+									<a href="#" class="chapter-settings__option chapter-settings__option--homework">과제로 추가하기</a>
+									<a href="#" class="chapter-settings__option chapter-settings__option--delete">콘텐츠 삭제하기</a>
+									<a href="#" class="chapter-settings__option chapter-settings__option--add">아래에 콘텐츠 추가하기</a>
+								</div>
+							</div>
+						</li>
+						<li class="sidebar__item">
+							<div class="sidebar__opening">
+								<button type="button" class="off"><i class="blind">학생들에게 닫기</i></button>
+							</div>
+							<a href="#" class="sidebar__link">
+								<img src="/static/teacher/img/tmp/aside_left_menu1_1@2x.png" alt="" srcset="">
+								<span class="sidebar__link-title">어휘 - 플래시카드</span>
+							</a>
+							<div class="chapter-settings expandedSet">
+								<a href="#" class="chapter-settings__configure" aria-expanded="false"><i class="blind">설정하기</i></a>
+								<div class="chapter-settings__menu">
+									<a href="#" class="chapter-settings__option chapter-settings__option--edit">평가로 발행하기</a>
+									<a href="#" class="chapter-settings__option chapter-settings__option--homework">과제로 추가하기</a>
+									<a href="#" class="chapter-settings__option chapter-settings__option--delete">콘텐츠 삭제하기</a>
+									<a href="#" class="chapter-settings__option chapter-settings__option--add">아래에 콘텐츠 추가하기</a>
+								</div>
+							</div>
+						</li>
+						<li class="sidebar__item">
+							<div class="sidebar__opening">
+								<button type="button" class="off"><i class="blind">학생들에게 닫기</i></button>
+							</div>
+							<a href="#" class="sidebar__link">
+								<img src="/static/teacher/img/tmp/aside_left_menu1_1@2x.png" alt="" srcset="">
+								<span class="sidebar__link-title">어휘 - 플래시카드</span>
+							</a>
+							<div class="chapter-settings expandedSet">
+								<a href="#" class="chapter-settings__configure" aria-expanded="false"><i class="blind">설정하기</i></a>
+								<div class="chapter-settings__menu">
+									<a href="#" class="chapter-settings__option chapter-settings__option--edit">평가로 발행하기</a>
+									<a href="#" class="chapter-settings__option chapter-settings__option--homework">과제로 추가하기</a>
+									<a href="#" class="chapter-settings__option chapter-settings__option--delete">콘텐츠 삭제하기</a>
+									<a href="#" class="chapter-settings__option chapter-settings__option--add">아래에 콘텐츠 추가하기</a>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<h3 class="sidebar__chapter"><span>2차시</span></h3>
+				</div>
 			</div>
 		</div>
 	</aside>
-	<main id="content">
-		<div class="modules">
-			<a href="#" class="modules--link">Module 1</a>
-			<a href="#" class="modules--link">Module 2</a>
-			<a href="#" class="modules--link">Module 3</a>
-		</div>
+	<div class="rightSet main-header-top">
+	<!-- <div class="main-header-bottom"> -->
 		
-		<div class="toolbar">
-			<nav>
-				<div class="toolbar__group toolbar__group--type1">
-					<button type="button" class="toolbar__button toolbar__button--add"><span>출석부</span></button>
+		<header class="main-header">
+			<div class="toolbar">
+				<nav>
+					<div class="toolbar__group">
+						<button type="button" class="toolbar__button t_b--attend"><span>출석부</span></button>
+					</div>
+					<div class="toolbar__group">
+						<button type="button" class="toolbar__button t_b--pen" aria-expanded="false"><span>펜 굵기와 색상 선택</span></button>
+						<button type="button" class="toolbar__button t_b--high"><span>하이라이터</span></button>
+						<button type="button" class="toolbar__button t_b--eras"><span>지우개</span></button>
+					</div>
+					<div class="toolbar__group">
+						<button type="button" class="toolbar__button t_b--zoom-in"><span>확대하기</span></button>
+						<button type="button" class="toolbar__button t_b--zoom"><span>100% 보기</span></button>
+						<button type="button" class="toolbar__button t_b--zoom-out"><span>축소하기</span></button>
+					</div>
+					<div class="toolbar__group">
+						<button type="button" class="toolbar__button t_b--stopwatch"><span>스톱워치</span></button>
+						<button type="button" class="toolbar__button t_b--timer"><span>타이머</span></button>
+						<button type="button" class="toolbar__button t_b--random"><span>랜덤 뽑기</span></button>
+					</div>
+					<div class="toolbar__group">
+						<button type="button" class="toolbar__button t_b--tomove"><span>툴바 이동</span></button>
+					</div>
+				</nav>
+				<!-- Page Control -->
+				<div class="toolbar__page-ctrl">
+					<button type="button" class="toolbar__page-ctrl-button t_b--prev">
+						<span>이전 페이지로 이동</i>
+					</button>
+					<span class="toolbar__page-ctrl-count">
+						<i class="blind">현재 페이지 : </i>
+						<strong>1</strong> / <i class="blind">총 페이지 : </i><span>20</span>
+					</span>
+					<button type="button" class="toolbar__page-ctrl-button t_b--next">
+						<span>다음 페이지로 이동</span>
+					</button>
 				</div>
-				<div class="toolbar__group toolbar__group--type1">
-					<button type="button" class="toolbar__button toolbar__button--add" aria-expanded="false"><span>펜 굵기와 색상 선택</span></button>
-					<button type="button" class="toolbar__button toolbar__button--highlight"><span>하이라이터</span></button>
-					<button type="button" class="toolbar__button toolbar__button--eraser"><span>지우개</span></button>
-				</div>
-				<div class="toolbar__group toolbar__group--type1">
-					<button type="button" class="toolbar__button toolbar__button--zoom-in"><span>확대하기</span></button>
-					<button type="button" class="toolbar__button toolbar__button--zoom-100"><span>100% 보기</span></button>
-					<button type="button" class="toolbar__button toolbar__button--zoom-out"><span>축소하기</span></button>
-				</div>
-				<div class="toolbar__group toolbar__group--type2">
-					<button type="button" class="toolbar__button toolbar__button--stopwatch"><span>스톱워치</span></button>
-					<button type="button" class="toolbar__button toolbar__button--timer"><span>타이머</span></button>
-					<button type="button" class="toolbar__button toolbar__button--draw"><span>랜덤 뽑기</span></button>
-					<button type="button" class="toolbar__button toolbar__button--move"><span>툴바 이동</span></button>
-				</div>
-			</nav>
-			<!-- Page Control -->
-			<div class="toolbar__page-ctrl">
-				<button type="button" class="toolbar__page-ctrl-button toolbar__page-ctrl-button--prev">
-					<span class="material-symbols-outlined">arrow_back_ios</span>
-					<i class="blind">이전 페이지로 이동</i>
-				</button>
-				<span class="toolbar__page-ctrl-count">
-					<i class="blind">현재 페이지 : </i>
-					<strong>1</strong> / <i class="blind">총 페이지 : </i><span>20</span>
-				</span>
-				<button type="button" class="toolbar__page-ctrl-button toolbar__page-ctrl-button--next">
-					<span class="material-symbols-outlined" aria-hidden="true">arrow_forward_ios</span>
-					<i class="blind">다음 페이지로 이동</i>
-				</button>
+				<!-- //Page Control -->
 			</div>
-			<!-- //Page Control -->	
-		</div>
+		</header>
 
 		<!-- main box -->
-		<div class="main">
-			<div class="main__header">
-				<h2 class="main__title">단어 파헤치기 <small>단원명</small></h2>
-				<div class="main__select">
-					<button type="button" class="main__button--select">선택<span>0<i class="blind"> 개</i></span></button>
-					<button type="button" class="main__button--all">전체 선택</button>
-					<button type="button" class="main__button--ai">AI 문항</button>
-					<button type="button" class="main__button--error">오답<span>3<i class="blind"> 개</i></span></button>
+		<main class="main" id="content">
+			<div class="modules">
+				<a href="#" class="modules--link on" title="선택됨">Module 1</a>
+				<a href="#" class="modules--link off" aria-disabled="true">Module 2</a>
+				<a href="#" class="modules--link">Module 3</a>
+			</div>
+
+			<!-- mainPage Iframes ? -->
+			<div class="mainPage">
+				<img src="/static/teacher/img/tmp/tmp_page-01.png" alt="" srcset="" class="w100p">
+				<!--  
+				iframe 일반 페이지일 것 같아 우선 코딩 안함.
+				<div class="mainPage__header">
+					<h2 class="mainPage__title">단어 파헤치기 <small>단원명</small></h2>
+					<div class="mainPage__info">
+						<div class="mainPage__select">
+							<button type="button" class="mainPage--select">선택<span>0<i class="blind"> 개</i></span></button>
+							<button type="button" class="mainPage--all">전체 선택</button>
+							<button type="button" class="mainPage--ai">AI 문항</button>
+							<button type="button" class="mainPage--error">오답<span>3<i class="blind"> 개</i></span></button>
+						</div>
+						<div class="mainPage__select">
+							<button type="button" class="mainPage--wordcard">단어 카드</button>
+							<button type="button" class="mainPage--memorycard">메모리 카드</button>
+							<button type="button" class="mainPage--game">게임</button>
+						</div>
+					</div>
 				</div>
-				<div class="main__button">
-					<button type="button" class="main__button--wordcard">단어 카드</button>
-					<button type="button" class="main__button--memorycard">메모리 카드</button>
-					<button type="button" class="main__button--game">게임</button>
-				</div>
+				<div class="listSet">
+					<ul class="lists">
+						<li class="items">
+							<div class="wordcard">
+								<input type="checkbox" id="wordcard1" class="wordcard__checkbox">
+								<label for="wordcard1" class="wordcard__label">단어</label>
+								<div class="wordcard__card">
+									<strong class="badge">AI 문항</strong>
+									<span class="badge">오답 <em>0</em><i class="blind"> 개</i></span>
+									<div class="wordcard__progress step1"><i class="blind">1 단계</i></div>
+									<div class="wordcard__word">
+										<span class="wordcard__word--baby">baby</span>
+										<button type="button" class="wordcard__word--audio"><i class="blind">음성 듣기</i></button>
+										<img src="/static/teacher/img/tmp/thumb_wordcard_1.png" alt="" srcset="">
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div> -->
 			</div>
-			<div class="wordcard-list">
-				<ul>
-					<li>
-						<div class="wordcard">
-							<input type="checkbox" id="wordcard1" class="wordcard__checkbox">
-							<label for="wordcard1" class="wordcard__label">단어</label>
-							<div class="wordcard__card">
-								<strong class="badge">AI 문항</strong>
-								<span class="badge">오답 <em>0</em><i class="blind"> 개</i></span>
-								<div class="wordcard__progress step1"><i class="blind">1 단계</i></div>
-								<div class="wordcard__word">
-									<span class="wordcard__word--baby">baby</span>
-									<button type="button" class="wordcard__word--audio"><i class="blind">음성 듣기</i></button>
-									<img src="/static/teacher/img/tmp/thumb_wordcard_1.png" alt="" srcset="">
-								</div>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</div>
-
-			<div class="wordcard-list">
-				<ul>
-					<li>
-						<div class="wordcard">
-							<!-- 유일한 id 값 중복되지 않도록 주의 필요, label 의 title 필수 값(유일한 텍스트) -->
-							<label for="wordcard1" class="wordcard__label"><input type="checkbox" id="wordcard1" class="wordcard__checkbox" title="baby"></label>
-							<div class="wordcard__card" id="WCD_INF01">
-								<strong class="wordcard__badge wordcard__badge--ai">AI 문항</strong>
-								<span class="wordcard__badge">오답 <em>0</em><span class="blind"> 개</span></span>
-								<div class="wordcard__progress wordcard__progress--step1"><span class="blind">1 단계</span></div>
-								<div class="wordcard__word">
-									<span class="wordcard__text">baby</span>
-									<button type="button" class="wordcard__audio"><span class="blind">음성 듣기</span></button>
-									<img src="/static/teacher/img/tmp/thumb_wordcard_1.png" alt="baby">
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="wordcard">
-							<!-- 유일한 id 값 중복되지 않도록 주의 필요, label 의 title 필수 값(유일한 텍스트) -->
-							<label for="wordcard1" class="wordcard__label"><input type="checkbox" id="wordcard1" class="wordcard__checkbox" title="baby"></label>
-							<div class="wordcard__card" id="WCD_INF01">
-								<strong class="wordcard__badge wordcard__badge--ai">AI 문항</strong>
-								<span class="wordcard__badge">오답 <em>0</em><span class="blind"> 개</span></span>
-								<div class="wordcard__progress wordcard__progress--step1"><span class="blind">1 단계</span></div>
-								<div class="wordcard__word">
-									<span class="wordcard__text">baby</span>
-									<button type="button" class="wordcard__audio"><span class="blind">음성 듣기</span></button>
-									<img src="/static/teacher/img/tmp/thumb_wordcard_1.png" alt="baby">
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="wordcard">
-							<!-- 유일한 id 값 중복되지 않도록 주의 필요, label 의 title 필수 값(유일한 텍스트) -->
-							<label for="wordcard1" class="wordcard__label"><input type="checkbox" id="wordcard1" class="wordcard__checkbox" title="baby"></label>
-							<div class="wordcard__card" id="WCD_INF01">
-								<strong class="wordcard__badge wordcard__badge--ai">AI 문항</strong>
-								<span class="wordcard__badge">오답 <em>0</em><span class="blind"> 개</span></span>
-								<div class="wordcard__progress wordcard__progress--step1"><span class="blind">1 단계</span></div>
-								<div class="wordcard__word">
-									<span class="wordcard__text">baby</span>
-									<button type="button" class="wordcard__audio"><span class="blind">음성 듣기</span></button>
-									<img src="/static/teacher/img/tmp/thumb_wordcard_1.png" alt="baby">
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="wordcard">
-							<!-- 유일한 id 값 중복되지 않도록 주의 필요, label 의 title 필수 값(유일한 텍스트) -->
-							<label for="wordcard1" class="wordcard__label"><input type="checkbox" id="wordcard1" class="wordcard__checkbox" title="baby"></label>
-							<div class="wordcard__card" id="WCD_INF01">
-								<strong class="wordcard__badge wordcard__badge--ai">AI 문항</strong>
-								<span class="wordcard__badge">오답 <em>0</em><span class="blind"> 개</span></span>
-								<div class="wordcard__progress wordcard__progress--step1"><span class="blind">1 단계</span></div>
-								<div class="wordcard__word">
-									<span class="wordcard__text">baby</span>
-									<button type="button" class="wordcard__audio"><span class="blind">음성 듣기</span></button>
-									<img src="/static/teacher/img/tmp/thumb_wordcard_1.png" alt="baby">
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="wordcard">
-							<!-- 유일한 id 값 중복되지 않도록 주의 필요, label 의 title 필수 값(유일한 텍스트) -->
-							<label for="wordcard1" class="wordcard__label"><input type="checkbox" id="wordcard1" class="wordcard__checkbox" title="baby"></label>
-							<div class="wordcard__card" id="WCD_INF01">
-								<strong class="wordcard__badge wordcard__badge--ai">AI 문항</strong>
-								<span class="wordcard__badge">오답 <em>0</em><span class="blind"> 개</span></span>
-								<div class="wordcard__progress wordcard__progress--step1"><span class="blind">1 단계</span></div>
-								<div class="wordcard__word">
-									<span class="wordcard__text">baby</span>
-									<button type="button" class="wordcard__audio"><span class="blind">음성 듣기</span></button>
-									<img src="/static/teacher/img/tmp/thumb_wordcard_1.png" alt="baby">
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="wordcard">
-							<!-- 유일한 id 값 중복되지 않도록 주의 필요, label 의 title 필수 값(유일한 텍스트) -->
-							<label for="wordcard1" class="wordcard__label"><input type="checkbox" id="wordcard1" class="wordcard__checkbox" title="baby"></label>
-							<div class="wordcard__card" id="WCD_INF01">
-								<strong class="wordcard__badge wordcard__badge--ai">AI 문항</strong>
-								<span class="wordcard__badge">오답 <em>0</em><span class="blind"> 개</span></span>
-								<div class="wordcard__progress wordcard__progress--step1"><span class="blind">1 단계</span></div>
-								<div class="wordcard__word">
-									<span class="wordcard__text">baby</span>
-									<button type="button" class="wordcard__audio"><span class="blind">음성 듣기</span></button>
-									<img src="/static/teacher/img/tmp/thumb_wordcard_1.png" alt="baby">
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="wordcard">
-							<!-- 유일한 id 값 중복되지 않도록 주의 필요, label 의 title 필수 값(유일한 텍스트) -->
-							<label for="wordcard1" class="wordcard__label"><input type="checkbox" id="wordcard1" class="wordcard__checkbox" title="baby"></label>
-							<div class="wordcard__card" id="WCD_INF01">
-								<strong class="wordcard__badge wordcard__badge--ai">AI 문항</strong>
-								<span class="wordcard__badge">오답 <em>0</em><span class="blind"> 개</span></span>
-								<div class="wordcard__progress wordcard__progress--step1"><span class="blind">1 단계</span></div>
-								<div class="wordcard__word">
-									<span class="wordcard__text">baby</span>
-									<button type="button" class="wordcard__audio"><span class="blind">음성 듣기</span></button>
-									<img src="/static/teacher/img/tmp/thumb_wordcard_1.png" alt="baby">
-								</div>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</div>
+			
+			<!-- //mainPage Iframes ? -->
 
 
 
-		</div>
-	</main>
+		</main>
+	</div>
 
 </div>
 
 <!-- 
 	<footer class="footer">
-    푸터 내용
-  </footer> -->
+	푸터 내용
+	</footer> -->
+<script src="/common/lib/jquery-3.7.1.min.js"></script>
+<script src="/common/lib/jquery-ui-1.13.2.custom/jquery-ui.min.js"></script>
+<script src="/common/lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="/common/lib/swiper@11/swiper.bundle.min.js"></script>
+<script src="/static/teacher/js/teacher.js"></script>
+
 </body>
 </html>

@@ -269,8 +269,8 @@ h6 {
 margin: 0;
 }
 
+.blind,
 .sr-only,
-.hidden,
 .accessibility {
 position: absolute;
 width: 1px;

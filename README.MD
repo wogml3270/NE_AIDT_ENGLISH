@@ -35,6 +35,11 @@ BEM (Block Element Modifier) 방법론의 규칙을 따름
 기본 4칸 탭 사용
 코드 가독성 높이기 위해 들여쓰기 사용
 
+# font 
+네트워크 용량의 문제로 최소화 시킴
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,600,0,0");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/pretendard/1.3.9/static/pretendard.min.css");
+
 # 순차 작업 목록
 ### 1순위 작업(위에서부터 순서대로 작업)
 수업하기	42~56	https://xd.adobe.com/view/36e0fa29-e2cf-41d3-b12d-070812e1d84f-63b3/screen/3931fd26-5da5-48c5-9eaf-347b19d40d89/	퍼블 요청	1	4-9
