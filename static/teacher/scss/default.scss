@@ -17,7 +17,11 @@
 @import "base/color"; // colors
 @import "base/font"; // colors
 @import "components/sprite"; //아이콘 스프라이트
-[class^="ico-"] { display: inline-block; }
+
+[class^="ico-"] {
+	display: inline-block;
+}
+
 @import "components/debug"; //퍼블용 레이아웃 (완료시 반드시 삭제)
 
 @import "base/common"; // bootstrap reset theme
@@ -38,17 +42,22 @@
 @import "components/study"; // 수업 관리
 
 
-[class*="svg-"] {	display: inline-block; }
+[class*="svg-"] {
+	display: inline-block;
+}
+
 [class^="ico-"] {
 	display: inline-block;
 }
 
 a {
 	color: var(--linkcolor);
+
 	&:link,
-	&:visited {;
+	&:visited {
 		text-decoration: none;
 	}
+
 	&:hover,
 	&:focus,
 	&:active {
@@ -57,4 +66,3 @@ a {
 		text-decoration: underline;
 	}
 }
-

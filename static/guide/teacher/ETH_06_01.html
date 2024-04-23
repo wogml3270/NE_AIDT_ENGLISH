@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/teacher/css/default.css" />
+    <link rel="stylesheet" href="/static/teacher/css/styles_06_01.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header">
+      <div>
+        <h1>
+          <span>2024년 5월 23일</span>
+          <span>1학년 1반</span>
+          <span>Lesson 1 About and You</span>
+        </h1>
+      </div>
+      <div>
+        <label class="switch">
+          <span class="switch_label">개인 정보 숨기기</span>
+          <input type="checkbox" />
+          <span class="slider">
+            <span class="off">OFF</span>
+            <span class="on">ON</span>
+          </span>
+        </label>
+        <button>
+          <img src="/static/teacher/img/ico/editing.svg" />
+          <span>수업 시작하기</span>
+        </button>
+      </div>
+    </header>
+    <main class="main-container">
+      <div class="left_wrap">
+        <section class="list_wrap">
+          <div class="list_wrap_group">
+            <div class="connecting">
+              <span>출석부</span>
+              <span><strong>28</strong>/32</span>
+            </div>
+            <button class="refresh">
+              <img src="/static/teacher/img/ico/refresh-arrow.svg" />
+              <span>새로 고침</span>
+            </button>
+          </div>
+          <div class="contents">
+            <div class="table_group">
+              <table class="table_style">
+                <thead>
+                  <tr>
+                    <th>접속</th>
+                    <th>번호</th>
+                    <th>이름</th>
+                    <th>학습 컨디션</th>
+                    <th>출결</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+            <div class="save_btn">
+              <button>저장하기</button>
+            </div>
+            <div class="info">
+              <div class="name">
+                <span>**</span>
+                <span>학*이*학*이*학*이*</span>
+              </div>
+              <div class="memo">
+                <span>메모</span>
+                <textarea></textarea>
+                <div class="save_btn">
+                  <button>메모 저장</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="right_wrap"></div>
+    </main>
+  </body>
+  <script>
+    const tableBody = document.querySelector(".table_style tbody");
+
+    const numberOfRows = 20;
+
+    for (let i = 0; i < numberOfRows; i++) {
+      let tr = document.createElement("tr");
+
+      tr.innerHTML = `
+  <td><span></span></td>
+  <td>**</td>
+  <td>학*이*학*이*학*이*</td>
+  <td>매우 좋아</td>
+  <td><button>출석</button></td>
+`;
+      tableBody.appendChild(tr);
+    }
+  </script>
+</html>

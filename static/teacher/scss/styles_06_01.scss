@@ -1,0 +1,370 @@
+html,
+body,
+p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(255, 252, 248);
+    height: 100vh;
+    overflow: hidden;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+$main-color: #817361;
+$border-color: #c4b096;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    margin-right: 30px;
+
+    border-left: {
+        color: #00B894;
+        width: 8px;
+        style: solid;
+    }
+
+    &>div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-left: 10px;
+
+        &>img {
+            width: 22px;
+            height: 22px;
+        }
+
+        &>h1 {
+            font-size: 18px;
+            color: $main-color;
+        }
+    }
+
+    .switch {
+        margin-right: 20px;
+        position: relative;
+        width: 75px;
+        height: 28px;
+
+        input[type=checkbox] {
+            opacity: 0;
+            width: 0;
+            height: 0;
+
+            &:checked+.slider .on {
+                opacity: 0;
+            }
+
+            &:checked+.slider .off {
+                opacity: 1;
+            }
+
+            &:checked+.slider:before {
+                background-color: rgb(129, 115, 97);
+                border: 1px solid #a39da6;
+            }
+
+            &:not(:checked)+.slider .on {
+                opacity: 1;
+            }
+
+            &:not(:checked)+.slider .off {
+                opacity: 0;
+            }
+        }
+
+        .switch_label {
+            color: rgb(129, 115, 97);
+            position: absolute;
+            left: -125px;
+            top: 1px;
+            font-size: 18px;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 1px solid $border-color;
+            background-color: #fff;
+            -webkit-transition: .4s;
+            transition: .4s;
+            border-radius: 34px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .on,
+            .off {
+                font-size: 18px;
+                color: #a39da6;
+            }
+
+            &:before {
+                position: absolute;
+                content: "";
+                height: 22px;
+                width: 22px;
+                left: 3px;
+                bottom: 1px;
+                background-color: #FF7F50;
+                border: 1px solid #e36030;
+                -webkit-transition: .4s;
+                transition: .4s;
+                border-radius: 50%;
+            }
+        }
+
+        input:checked+.slider:before {
+            -webkit-transform: translateX(43px);
+            -ms-transform: translateX(43px);
+            transform: translateX(43px);
+        }
+    }
+
+    button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        background-color: #FF4C0D;
+        color: #fff;
+        border-radius: 8px;
+        border: 1px solid #FF4C0D;
+        height: 40px;
+        transition: .3s;
+        padding: 0 12px;
+
+        & img {
+            color: #000;
+        }
+
+        &:hover {
+            text-decoration: underline;
+
+        }
+    }
+}
+
+.main-container {
+    display: flex;
+    gap: 40px;
+    padding: 0 50px;
+
+    .left_wrap {
+
+        & .list_wrap {
+            color: $main-color;
+            flex: 2;
+
+            & .list_wrap_group {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                & .connecting {
+                    display: flex;
+                    gap: 20px;
+
+                    &>span {
+                        font-size: 20px;
+                        color: #614B2E;
+                        font-weight: bold;
+                    }
+
+                    & strong {
+                        color: rgb(0, 180, 204);
+                        font-size: 18px;
+                    }
+                }
+
+                & .refresh {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 5px;
+                    cursor: pointer;
+                    background-color: transparent;
+                    border: 0;
+                    font-size: 16px;
+                    color: $main-color
+                }
+            }
+
+            & .contents {
+                background-color: #fff;
+                padding: 30px;
+                border: 1px solid $border-color;
+                border-radius: 30px;
+                height: 930px;
+
+                & .table_group {
+                    margin-top: 10px;
+                    height: 50%;
+                    overflow-y: auto;
+
+                    &::-webkit-scrollbar {
+                        background-color: #E9DBC9;
+                        width: 0.55rem;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        background-color: $border-color;
+                        border-radius: 10px;
+                        height: 50%;
+                    }
+
+                    & .table_style {
+                        border-radius: 20px;
+                        border-collapse: separate;
+                        width: 100%;
+                        white-space: nowrap;
+
+                        thead {
+                            th {
+                                font-size: 16px;
+
+                                &:not(:nth-child(3)) {
+                                    text-align: center;
+                                }
+                            }
+                        }
+
+                        tbody {
+
+                            tr {
+                                border-radius: 20px;
+                                border: 1px solid $border-color;
+                                height: 60px;
+
+                                &:hover {
+                                    background-color: #FFF9F2;
+                                    cursor: pointer;
+                                    border: 1px solid #FF4C0D;
+                                }
+
+                                td {
+                                    text-align: center;
+                                    font-size: 18px;
+                                    padding: 0 20px;
+
+                                    & span {
+                                        display: block;
+                                        width: 20px;
+                                        height: 20px;
+                                        border-radius: 50%;
+                                        background-color: #0086CC;
+                                    }
+
+
+                                    & button {
+                                        background-color: #0086CC;
+                                        color: #fff;
+                                        border: 0;
+                                        border-radius: 15px;
+                                        padding: 7px 12px;
+                                        cursor: pointer;
+                                        font-size: 16px;
+
+                                        &:hover {
+                                            background-color: #2f96ce;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                & .save_btn {
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-top: 10px;
+
+                    & button {
+                        background-color: #E9DBC9;
+                        color: $main-color;
+                        border: 1px solid $border-color;
+                        border-radius: 10px;
+                        width: 90px;
+                        height: 34px;
+                        cursor: pointer;
+
+                        &:hover {
+                            background-color: #c4b096;
+                        }
+                    }
+                }
+
+                & .info {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 17px;
+
+                    & .name {
+                        display: flex;
+                        gap: 20px;
+                        font-size: 18px;
+                        font-weight: 700;
+                    }
+
+                    & .memo {
+                        display: flex;
+                        flex-direction: column;
+
+                        & span {
+                            color: $main-color;
+                            font-size: 18px;
+                            font-weight: 700;
+                        }
+
+                        & textarea {
+                            background-color: #fff;
+                            border: 1px solid $border-color;
+                            border-radius: 10px;
+                            margin-top: 5px;
+                            padding: 10px;
+                            min-height: 120px;
+                            resize: none;
+                            font-size: 18px;
+                            font-weight: 700;
+                        }
+                    }
+
+                    .save_btn {
+                        display: flex;
+                        justify-content: flex-end;
+                        margin-top: 10px;
+
+                        & button {
+                            background-color: #817361;
+                            color: #fff;
+                            border: 1px solid $border-color;
+                            border-radius: 10px;
+                            width: 90px;
+                            height: 34px;
+                            cursor: pointer;
+
+                            &:hover {
+                                background-color: #6e6253;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
