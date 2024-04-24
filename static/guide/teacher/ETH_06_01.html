@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/static/teacher/css/default.css" />
-    <link rel="stylesheet" href="/static/teacher/css/styles_06_01.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/teacher/css/default.css">
+    <link rel="stylesheet" href="/static/teacher/css/styles_06_01.css">
     <title>Document</title>
   </head>
   <body>
@@ -19,14 +19,14 @@
       <div>
         <label class="switch">
           <span class="switch_label">개인 정보 숨기기</span>
-          <input type="checkbox" />
+          <input type="checkbox">
           <span class="slider">
             <span class="off">OFF</span>
             <span class="on">ON</span>
           </span>
         </label>
         <button>
-          <img src="/static/teacher/img/ico/editing.svg" />
+          <img src="/static/teacher/img/ico/editing.svg" alt="">
           <span>수업 시작하기</span>
         </button>
       </div>
@@ -40,7 +40,7 @@
               <span><strong>28</strong>/32</span>
             </div>
             <button class="refresh">
-              <img src="/static/teacher/img/ico/refresh-arrow.svg" />
+              <img src="/static/teacher/img/ico/refresh-arrow.svg" alt="">
               <span>새로 고침</span>
             </button>
           </div>
@@ -80,23 +80,23 @@
       </div>
       <div class="right_wrap"></div>
     </main>
+    <script>
+      const tableBody = document.querySelector(".table_style tbody");
+  
+      const numberOfRows = 20;
+  
+      for (let i = 0; i < numberOfRows; i++) {
+        let tr = document.createElement("tr");
+  
+        tr.innerHTML = `
+    <td><span></span></td>
+    <td>**</td>
+    <td>학*이*학*이*학*이*</td>
+    <td>매우 좋아</td>
+    <td><button>출석</button></td>
+  `;
+        tableBody.appendChild(tr);
+      }
+    </script>
   </body>
-  <script>
-    const tableBody = document.querySelector(".table_style tbody");
-
-    const numberOfRows = 20;
-
-    for (let i = 0; i < numberOfRows; i++) {
-      let tr = document.createElement("tr");
-
-      tr.innerHTML = `
-  <td><span></span></td>
-  <td>**</td>
-  <td>학*이*학*이*학*이*</td>
-  <td>매우 좋아</td>
-  <td><button>출석</button></td>
-`;
-      tableBody.appendChild(tr);
-    }
-  </script>
 </html>
