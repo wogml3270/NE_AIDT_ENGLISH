@@ -261,7 +261,7 @@ height: 34px;
 cursor: pointer;
 }
 .main-container .left_wrap .list_wrap .contents .save_btn button:hover {
-background-color: #c4b096;
+text-decoration: underline;
 }
 .main-container .left_wrap .list_wrap .contents .info {
 flex: 1;
@@ -310,7 +310,7 @@ height: 34px;
 cursor: pointer;
 }
 .main-container .left_wrap .list_wrap .contents .info .save_btn button:hover {
-background-color: #6e6253;
+text-decoration: underline;
 }
 .main-container .modules h2 {
 font-size: 20px;
@@ -327,13 +327,56 @@ border-radius: 20px;
 .main-container .right_wrap .mainPage {
 height: 427px;
 }
-.main-container .list_bottom > .toolbar > button {
+.main-container .list_bottom {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-top: 10px;
+}
+.main-container .list_bottom > span {
+font-size: 16px;
+font-weight: bold;
+color: #817361;
+}
+.main-container .list_bottom .bottom_group {
+height: 34px;
+display: flex;
+gap: 15px;
+}
+.main-container .list_bottom .bottom_group > button {
 background-color: #817361;
 color: #fff;
 border: 1px solid #c4b096;
 border-radius: 10px;
-cursor: pointer;
-padding: 10px;
+padding: 0 10px;
 font-size: 16px;
+}
+.main-container .list_bottom .bottom_group > button:hover {
+text-decoration: underline;
+}
+.main-container .list_bottom .bottom_group > .toolbar {
+margin: 0;
+height: 100%;
+}
+.main-container .list_bottom .bottom_group > .toolbar .toolbar__page-ctrl button {
+height: 26px;
+width: 48px;
+border-radius: 20px;
+position: relative;
+}
+.main-container .list_bottom .bottom_group > .toolbar .toolbar__page-ctrl button::before {
+width: 12px;
+height: 12px;
+position: absolute;
+bottom: 5px;
+}
+.main-container .list_bottom .bottom_group > .toolbar .toolbar__page-ctrl .t_b--prev::before {
+left: 10px;
+}
+.main-container .list_bottom .bottom_group > .toolbar .toolbar__page-ctrl .t_b--next::before {
+right: 10px;
+}
+.main-container .task_status {
+margin-top: 40px;
 }
 /*# sourceMappingURL=styles_06_01.css.map */
