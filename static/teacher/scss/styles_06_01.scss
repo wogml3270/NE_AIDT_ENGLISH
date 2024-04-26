@@ -177,15 +177,26 @@ $border-color: #c4b096;
                     display: flex;
                     gap: 20px;
 
-                    &>span {
+                    &>span:first-child {
                         font-size: 20px;
                         color: #614B2E;
                         font-weight: bold;
                     }
 
-                    & strong {
-                        color: rgb(0, 180, 204);
-                        font-size: 18px;
+                    &>span:first-child::after {
+                        content: '';
+                        display: inline-block;
+                        margin-left: 20px;
+                        width: 1px;
+                        height: 11px;
+                        background-color: #616161;
+                    }
+
+                    & span {
+                        strong {
+                            color: rgb(0, 180, 204);
+                            font-size: 18px;
+                        }
                     }
                 }
 
@@ -207,12 +218,11 @@ $border-color: #c4b096;
                 padding: 30px;
                 border: 1px solid $border-color;
                 border-radius: 30px;
-                height: 930px;
 
                 & .table_group {
                     margin-top: 10px;
-                    height: 50%;
                     overflow-y: auto;
+                    height: 40vh;
 
                     &::-webkit-scrollbar {
                         background-color: #E9DBC9;
@@ -230,6 +240,8 @@ $border-color: #c4b096;
                         border-collapse: separate;
                         width: 100%;
                         white-space: nowrap;
+                        height: 200px;
+                        overflow: hidden;
 
                         thead {
                             th {
@@ -366,5 +378,40 @@ $border-color: #c4b096;
             }
         }
 
+    }
+
+    .modules {
+        & h2 {
+            font-size: 20px;
+            margin-right: 129px;
+        }
+    }
+
+    .right_wrap {
+        display: flex;
+
+        .sidebar {
+            width: 230px;
+            height: 427px;
+            border-radius: 20px;
+        }
+
+        .mainPage {
+            height: 427px;
+        }
+    }
+
+    .list_bottom {
+        &>.toolbar {
+            &>button {
+                background-color: #817361;
+                color: #fff;
+                border: 1px solid #c4b096;
+                border-radius: 10px;
+                cursor: pointer;
+                padding: 10px;
+                font-size: 16px;
+            }
+        }
     }
 }

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/teacher/css/default.css">
-    <link rel="stylesheet" href="/static/teacher/css/styles_06_01.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/teacher/css/default.css" />
+    <link rel="stylesheet" href="/static/teacher/css/styles_06_01.css" />
     <title>Document</title>
   </head>
   <body>
@@ -19,14 +19,14 @@
       <div>
         <label class="switch">
           <span class="switch_label">개인 정보 숨기기</span>
-          <input type="checkbox">
+          <input type="checkbox" />
           <span class="slider">
             <span class="off">OFF</span>
             <span class="on">ON</span>
           </span>
         </label>
         <button>
-          <img src="/static/teacher/img/ico/editing.svg" alt="">
+          <img src="/static/teacher/img/ico/editing.svg" alt="" />
           <span>수업 시작하기</span>
         </button>
       </div>
@@ -40,7 +40,7 @@
               <span><strong>28</strong>/32</span>
             </div>
             <button class="refresh">
-              <img src="/static/teacher/img/ico/refresh-arrow.svg" alt="">
+              <img src="/static/teacher/img/ico/refresh-arrow.svg" alt="" />
               <span>새로 고침</span>
             </button>
           </div>
@@ -78,16 +78,149 @@
           </div>
         </section>
       </div>
-      <div class="right_wrap"></div>
+      <div>
+        <div class="modules">
+          <h2>수업 미리 보기</h2>
+          <a href="#" class="modules--link on" title="선택됨">Module 1</a>
+          <a href="#" class="modules--link off">Module 2</a>
+          <a href="#" class="modules--link">Module 3</a>
+        </div>
+        <div class="right_wrap">
+          <aside class="sidebar">
+            <div class="sidebarSet">
+              <div class="sidebar__section sidebar__section--intro scrollY">
+                <h2 class="sidebar__title">Intro</h2>
+                <div class="sidebar__content">
+                  <ul class="sidebar__list">
+                    <li class="sidebar__item">
+                      <a href="#" class="sidebar__link active" title="선택됨">
+                        <img
+                          src="/static/teacher/img/tmp/aside_left_menu1_1@2x.png"
+                          alt=""
+                        />
+                        <span class="sidebar__link-title"
+                          >어휘 - 플래시카드</span
+                        >
+                      </a>
+                    </li>
+                    <li class="sidebar__item">
+                      <a href="#" class="sidebar__link">
+                        <img
+                          src="/static/teacher/img/tmp/aside_left_menu1_1@2x.png"
+                          alt=""
+                        />
+                        <span class="sidebar__link-title"
+                          >어휘 - 플래시카드</span
+                        >
+                      </a>
+                    </li>
+                    <li class="sidebar__item">
+                      <a href="#" class="sidebar__link">
+                        <img
+                          src="/static/teacher/img/tmp/aside_left_menu1_1@2x.png"
+                          alt=""
+                        />
+                        <span class="sidebar__link-title"
+                          >어휘 - 플래시카드</span
+                        >
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </aside>
+          <div class="mainPage">
+            <div class="mainPage__header">
+              <h2 class="mainPage__title">
+                단어 파헤치기 <small>단원명</small>
+              </h2>
+              <div class="mainPage__info">
+                <div class="mainPage__select">
+                  <button type="button" class="mainPage--select">
+                    선택<span>0<i class="blind"> 개</i></span>
+                  </button>
+                  <button type="button" class="mainPage--all">전체 선택</button>
+                  <button type="button" class="mainPage--ai">AI 문항</button>
+                  <button type="button" class="mainPage--error">
+                    오답<span>3<i class="blind"> 개</i></span>
+                  </button>
+                </div>
+                <div class="mainPage__select">
+                  <button type="button" class="mainPage--wordcard">
+                    단어 카드
+                  </button>
+                  <button type="button" class="mainPage--memorycard">
+                    메모리 카드
+                  </button>
+                  <button type="button" class="mainPage--game">게임</button>
+                </div>
+              </div>
+            </div>
+            <div class="listSet">
+              <ul class="lists">
+                <li class="items">
+                  <div class="wordcard">
+                    <input
+                      type="checkbox"
+                      id="wordcard1"
+                      class="wordcard__checkbox"
+                    />
+                    <label for="wordcard1" class="wordcard__label">단어</label>
+                    <div class="wordcard__card">
+                      <strong class="badge">AI 문항</strong>
+                      <span class="badge"
+                        >오답 <em>0</em><i class="blind"> 개</i></span
+                      >
+                      <div class="wordcard__progress step1">
+                        <i class="blind">1 단계</i>
+                      </div>
+                      <div class="wordcard__word">
+                        <span class="wordcard__word--baby">baby</span>
+                        <button type="button" class="wordcard__word--audio">
+                          <i class="blind">음성 듣기</i>
+                        </button>
+                        <img
+                          src="/static/teacher/img/tmp/thumb_wordcard_1.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="list_bottom">
+          <span>2024-05-31까지 남은 시수: 3회</span>
+          <div class="toolbar">
+            <button>마지막 진도 바로가기</button>
+            <div class="toolbar__page-ctrl">
+              <button type="button" class="toolbar__page-ctrl-button t_b--prev">
+                <span>이전 페이지로 이동</span>
+              </button>
+              <span class="toolbar__page-ctrl-count">
+                <i class="blind">현재 페이지 : </i>
+                <strong>1</strong> / <i class="blind">총 페이지 : </i
+                ><span>20</span>
+              </span>
+              <button type="button" class="toolbar__page-ctrl-button t_b--next">
+                <span>다음 페이지로 이동</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <script>
       const tableBody = document.querySelector(".table_style tbody");
-  
+
       const numberOfRows = 20;
-  
+
       for (let i = 0; i < numberOfRows; i++) {
         let tr = document.createElement("tr");
-  
+
         tr.innerHTML = `
     <td><span></span></td>
     <td>**</td>
