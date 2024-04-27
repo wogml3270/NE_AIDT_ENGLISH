@@ -32,7 +32,6 @@ static/guide/teacher/top.html<!DOCTYPE html>
       </div>
     </header>
     <main class="main-container">
-      <div class="left_wrap">
         <section class="list_wrap">
           <div class="list_wrap_group">
             <div class="connecting">
@@ -75,10 +74,9 @@ static/guide/teacher/top.html<!DOCTYPE html>
                 </div>
               </div>
             </div>
-          </div>
         </section>
       </div>
-      <div>
+      <section class="list_wrap">
         <div class="modules">
           <h2>수업 미리 보기</h2>
           <a href="#" class="modules--link on" title="선택됨">Module 1</a>
@@ -219,13 +217,47 @@ static/guide/teacher/top.html<!DOCTYPE html>
             </div>
           </div>
         </div>
-        <div class="task_status">ss</div>
-      </div>
+        <div class="task_status">
+          <div>
+            <div class="task_title">
+              <h2>미답변 질문 현황<span>10개</span></h2>
+              <small
+                >상세보기<img src="/static/teacher/img/ico/t_b--next.png"
+              /></small>
+            </div>
+            <div class="task_contents"></div>
+          </div>
+          <div>
+            <div class="task_title">
+              <h2>진행중 과제 현황<span>2개</span></h2>
+              <small
+                >상세보기<img src="/static/teacher/img/ico/t_b--next.png"
+              /></small>
+            </div>
+            <div class="task_contents__ing">
+              <div>
+                <div>
+                  <span>Lesson 1</span>
+                  <span>말하기 - 롤플레잉</span>
+                </div>
+                <hr>
+                <div>
+                  <span>2024-05-01 ~ 2024-05-24</span>
+                  <span>진행 중</span>
+                </div>
+              </div>
+              <div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <script>
       const tableBody = document.querySelector(".table_style tbody");
 
-      const numberOfRows = 20;
+      const numberOfRows = 10;
 
       for (let i = 0; i < numberOfRows; i++) {
         let tr = document.createElement("tr");
@@ -238,6 +270,21 @@ static/guide/teacher/top.html<!DOCTYPE html>
     <td><button>출석</button></td>
   `;
         tableBody.appendChild(tr);
+      }
+
+      const taskContents = document.querySelector(".task_contents");
+      for (let i = 0; i < numberOfRows; i++) {
+        let div = document.createElement("div");
+
+        div.innerHTML = `
+        <h3>to 부정사에서 이거를 어떻게 바꿔야 바르게...</h3>
+        <div>
+          <p>2024-05-22</p>
+          <p>학*이*학*이*학*이*</p>
+        </div>
+        `;
+
+        taskContents.appendChild(div);
       }
     </script>
   </body>
